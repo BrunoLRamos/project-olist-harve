@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Olist Data Preview - Olist Order Items</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #0d6efd; margin-bottom: 20px; }
+        .table-container { overflow-x: auto; }
+        .nav-link { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Olist Dashboard</a>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="olist_customers_preview.html">Customers</a><a class="nav-link" href="olist_sellers_preview.html">Sellers</a><a class="nav-link" href="olist_order_reviews_preview.html">Order_reviews</a><a class="nav-link" href="olist_order_payments_preview.html">Order_payments</a><a class="nav-link" href="olist_orders_preview.html">Orders</a><a class="nav-link" href="olist_geolocation_preview.html">Geolocation</a><a class="nav-link" href="olist_products_preview.html">Products</a><a class="nav-link" href="olist_order_items_preview.html">Order_items</a>
+                </div>
+            </div>
+        </nav>
+        <h1>Olist Order Items</h1>
+        <p class="text-muted">Mostrando as primeiras 100 linhas de olist_order_items_dataset_202604222030.csv</p>
+        <div class="table-container">
+            <table border="1" class="dataframe table table-hover table-bordered table-sm">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_id</th>
+      <th>order_item_id</th>
+      <th>product_id</th>
+      <th>seller_id</th>
+      <th>shipping_limit_date</th>
+      <th>price</th>
+      <th>freight_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>00010242fe8c5a6d1ba2dd792cb16214</td>
+      <td>1</td>
+      <td>4244733e06e7ecb4970a6e2683c13e61</td>
+      <td>48436dade18ac8b2bce089ec2a041202</td>
+      <td>2017-09-19 09:45:35</td>
+      <td>58.90</td>
+      <td>13.29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>00018f77f2f0320c557190d7a144bdd3</td>
+      <td>1</td>
+      <td>e5f2d52b802189ee658865ca93d83a8f</td>
+      <td>dd7ddc04e1b6c2c614352b383efe2d36</td>
+      <td>2017-05-03 11:05:13</td>
+      <td>239.90</td>
+      <td>19.93</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>000229ec398224ef6ca0657da4fc703e</td>
+      <td>1</td>
+      <td>c777355d18b72b67abbeef9df44fd0fd</td>
+      <td>5b51032eddd242adc84c38acab88f23d</td>
+      <td>2018-01-18 14:48:30</td>
+      <td>199.00</td>
+      <td>17.87</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>00024acbcdf0a6daa1e931b038114c75</td>
+      <td>1</td>
+      <td>7634da152a4610f1595efa32f14722fc</td>
+      <td>9d7a1d34a5052409006425275ba1c2b4</td>
+      <td>2018-08-15 10:10:18</td>
+      <td>12.99</td>
+      <td>12.79</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>00042b26cf59d7ce69dfabb4e55b4fd9</td>
+      <td>1</td>
+      <td>ac6c3623068f30de03045865e4e10089</td>
+      <td>df560393f3a51e74553ab94004ba5c87</td>
+      <td>2017-02-13 13:57:51</td>
+      <td>199.90</td>
+      <td>18.14</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>00048cc3ae777c65dbb7d2a0634bc1ea</td>
+      <td>1</td>
+      <td>ef92defde845ab8450f9d70c526ef70f</td>
+      <td>6426d21aca402a131fc0a5d0960a3c90</td>
+      <td>2017-05-23 03:55:27</td>
+      <td>21.90</td>
+      <td>12.69</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>00054e8431b9d7675808bcb819fb4a32</td>
+      <td>1</td>
+      <td>8d4f2bb7e93e6710a28f34fa83ee7d28</td>
+      <td>7040e82f899a04d1b434b795a43b4617</td>
+      <td>2017-12-14 12:10:31</td>
+      <td>19.90</td>
+      <td>11.85</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>000576fe39319847cbb9d288c5617fa6</td>
+      <td>1</td>
+      <td>557d850972a7d6f792fd18ae1400d9b6</td>
+      <td>5996cddab893a4652a15592fb58ab8db</td>
+      <td>2018-07-10 12:30:45</td>
+      <td>810.00</td>
+      <td>70.75</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0005a1a1728c9d785b8e2b08b904576c</td>
+      <td>1</td>
+      <td>310ae3c140ff94b03219ad0adc3c778f</td>
+      <td>a416b6a846a11724393025641d4edd5e</td>
+      <td>2018-03-26 18:31:29</td>
+      <td>145.95</td>
+      <td>11.65</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0005f50442cb953dcd1d21e1fb923495</td>
+      <td>1</td>
+      <td>4535b0e1091c278dfd193e5a1d63b39f</td>
+      <td>ba143b05f0110f0dc71ad71b4466ce92</td>
+      <td>2018-07-06 14:10:56</td>
+      <td>53.99</td>
+      <td>11.40</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>00061f2a7bc09da83e415a52dc8a4af1</td>
+      <td>1</td>
+      <td>d63c1011f49d98b976c352955b1c4bea</td>
+      <td>cc419e0650a3c5ba77189a1882b7556a</td>
+      <td>2018-03-29 22:28:09</td>
+      <td>59.99</td>
+      <td>8.88</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>00063b381e2406b52ad429470734ebd5</td>
+      <td>1</td>
+      <td>f177554ea93259a5b282f24e33f65ab6</td>
+      <td>8602a61d680a10a82cceeeda0d99ea3d</td>
+      <td>2018-07-31 17:30:39</td>
+      <td>45.00</td>
+      <td>12.98</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0006ec9db01a64e59a68b2c340bf65a7</td>
+      <td>1</td>
+      <td>99a4788cb24856965c36a24e339b6058</td>
+      <td>4a3ca9315b744ce9f8e9374361493884</td>
+      <td>2018-07-26 17:24:20</td>
+      <td>74.00</td>
+      <td>23.32</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0008288aa423d2a3f00fcb17cd7d8719</td>
+      <td>1</td>
+      <td>368c6c730842d78016ad823897a372db</td>
+      <td>1f50f920176fa81dab994f9023523100</td>
+      <td>2018-02-21 02:55:52</td>
+      <td>49.90</td>
+      <td>13.37</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0008288aa423d2a3f00fcb17cd7d8719</td>
+      <td>2</td>
+      <td>368c6c730842d78016ad823897a372db</td>
+      <td>1f50f920176fa81dab994f9023523100</td>
+      <td>2018-02-21 02:55:52</td>
+      <td>49.90</td>
+      <td>13.37</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0009792311464db532ff765bf7b182ae</td>
+      <td>1</td>
+      <td>8cab8abac59158715e0d70a36c807415</td>
+      <td>530ec6109d11eaaf87999465c6afee01</td>
+      <td>2018-08-17 12:15:10</td>
+      <td>99.90</td>
+      <td>27.65</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0009c9a17f916a706d71784483a5d643</td>
+      <td>1</td>
+      <td>3f27ac8e699df3d300ec4a5d8c5cf0b2</td>
+      <td>fcb5ace8bcc92f75707dc0f01a27d269</td>
+      <td>2018-05-02 09:31:53</td>
+      <td>639.00</td>
+      <td>11.34</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>000aed2e25dbad2f9ddb70584c5a2ded</td>
+      <td>1</td>
+      <td>4fa33915031a8cde03dd0d3e8fb27f01</td>
+      <td>fe2032dab1a61af8794248c8196565c9</td>
+      <td>2018-05-16 20:57:03</td>
+      <td>144.00</td>
+      <td>8.77</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>000c3e6612759851cc3cbb4b83257986</td>
+      <td>1</td>
+      <td>b50c950aba0dcead2c48032a690ce817</td>
+      <td>218d46b86c1881d022bce9c68a7d4b15</td>
+      <td>2017-08-21 03:33:13</td>
+      <td>99.00</td>
+      <td>13.71</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>000e562887b1f2006d75e0be9558292e</td>
+      <td>1</td>
+      <td>5ed9eaf534f6936b51d0b6c5e4d5c2e9</td>
+      <td>8cbac7e12637ed9cffa18c7875207478</td>
+      <td>2018-02-28 12:08:37</td>
+      <td>25.00</td>
+      <td>16.11</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>000e63d38ae8c00bbcb5a30573b99628</td>
+      <td>1</td>
+      <td>553e0e7590d3116a072507a3635d2877</td>
+      <td>1c129092bf23f28a5930387c980c0dfc</td>
+      <td>2018-03-29 20:07:49</td>
+      <td>47.90</td>
+      <td>8.88</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>000e906b789b55f64edcb1f84030f90d</td>
+      <td>1</td>
+      <td>57d79905de06d8897872c551bfd09358</td>
+      <td>ea8482cd71df3c1969d7b9473ff13abc</td>
+      <td>2017-11-27 19:09:02</td>
+      <td>21.99</td>
+      <td>11.85</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>000f25f4d72195062c040b12dce9a18a</td>
+      <td>1</td>
+      <td>1c05e0964302b6cf68ca0d15f326c6ba</td>
+      <td>7c67e1448b00f6e969d365cea6b010ab</td>
+      <td>2018-03-21 11:10:11</td>
+      <td>119.99</td>
+      <td>44.40</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>001021efaa8636c29475e7734483457d</td>
+      <td>1</td>
+      <td>5d7c23067ed3fc8c6e699b9373d5890b</td>
+      <td>6560211a19b47992c3666cc44a7e94c0</td>
+      <td>2018-03-05 09:35:41</td>
+      <td>49.00</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0010b2e5201cc5f1ae7e9c6cc8f5bd00</td>
+      <td>1</td>
+      <td>5a419dbf24a8c9718fe522b81c69f61a</td>
+      <td>3504c0cb71d7fa48d967e0e4c94d59d9</td>
+      <td>2017-09-15 18:04:37</td>
+      <td>48.90</td>
+      <td>16.60</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>00119ff934e539cf26f92b9ef0cdfed8</td>
+      <td>1</td>
+      <td>21b1c2f67a9aafb5af0eb06c13b9dbda</td>
+      <td>c864036feaab8c1659f65ea4faebe1da</td>
+      <td>2017-08-11 00:35:12</td>
+      <td>219.90</td>
+      <td>16.98</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0011d82c4b53e22e84023405fb467e57</td>
+      <td>1</td>
+      <td>c389f712c4b4510bc997cee93e8b1a28</td>
+      <td>bfd27a966d91cfaafdb25d076585f0da</td>
+      <td>2018-01-29 21:51:25</td>
+      <td>289.00</td>
+      <td>26.33</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>00125cb692d04887809806618a2a145f</td>
+      <td>1</td>
+      <td>1c0c0093a48f13ba70d0c6b0a9157cb7</td>
+      <td>41b39e28db005d9731d9d485a83b4c38</td>
+      <td>2017-03-29 13:05:42</td>
+      <td>109.90</td>
+      <td>25.51</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>00130c0eee84a3d909e75bc08c5c3ca1</td>
+      <td>1</td>
+      <td>89321f94e35fc6d7903d36f74e351d40</td>
+      <td>16090f2ca825584b5a147ab24aa30c86</td>
+      <td>2018-06-14 05:16:24</td>
+      <td>27.90</td>
+      <td>7.94</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0013503b13da1eac686219390b7d641b</td>
+      <td>1</td>
+      <td>38afdf723b95d455b418a0f57d623c6b</td>
+      <td>1554a68530182680ad5c8b042c3ab563</td>
+      <td>2017-12-13 03:16:36</td>
+      <td>119.90</td>
+      <td>17.32</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>00137e170939bba5a3134e2386413108</td>
+      <td>1</td>
+      <td>672e757f331900b9deea127a2a7b79fd</td>
+      <td>e59aa562b9f8076dd550fcddf0e73491</td>
+      <td>2017-11-30 06:30:55</td>
+      <td>397.00</td>
+      <td>24.65</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>001427c0ec99cf8af737bd88e92fd444</td>
+      <td>1</td>
+      <td>28b4eced95a52d9c437a4caf9d311b95</td>
+      <td>77530e9772f57a62c906e1c21538ab82</td>
+      <td>2018-04-12 19:08:28</td>
+      <td>59.90</td>
+      <td>23.35</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>00143d0f86d6fbd9f9b38ab440ac16f5</td>
+      <td>1</td>
+      <td>e95ee6822b66ac6058e2e4aff656071a</td>
+      <td>a17f621c590ea0fab3d5d883e1630ec6</td>
+      <td>2017-10-20 16:07:52</td>
+      <td>21.33</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>00143d0f86d6fbd9f9b38ab440ac16f5</td>
+      <td>2</td>
+      <td>e95ee6822b66ac6058e2e4aff656071a</td>
+      <td>a17f621c590ea0fab3d5d883e1630ec6</td>
+      <td>2017-10-20 16:07:52</td>
+      <td>21.33</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>00143d0f86d6fbd9f9b38ab440ac16f5</td>
+      <td>3</td>
+      <td>e95ee6822b66ac6058e2e4aff656071a</td>
+      <td>a17f621c590ea0fab3d5d883e1630ec6</td>
+      <td>2017-10-20 16:07:52</td>
+      <td>21.33</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>0014ae671de39511f7575066200733b7</td>
+      <td>1</td>
+      <td>23365beed316535b4105bd800c46670e</td>
+      <td>92eb0f42c21942b6552362b9b114707d</td>
+      <td>2017-05-29 03:15:24</td>
+      <td>16.50</td>
+      <td>14.10</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>0015ebb40fb17286bea51d4607c4733c</td>
+      <td>1</td>
+      <td>50fd2b788dc166edd20512370dac54df</td>
+      <td>8b321bb669392f5163d04c59e235e066</td>
+      <td>2018-01-18 09:11:24</td>
+      <td>21.90</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>00169e31ef4b29deaae414f9a5e95929</td>
+      <td>1</td>
+      <td>b10eba910a974df70b8a12d0665cdb9e</td>
+      <td>a3e9a2c700480d9bb01fba070ba80a0e</td>
+      <td>2018-01-23 03:35:47</td>
+      <td>39.00</td>
+      <td>16.11</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>0016dfedd97fc2950e388d2971d718c7</td>
+      <td>1</td>
+      <td>4089861a1bd4685da70bddd6b4f974f1</td>
+      <td>a35124e2d763d7ca3fbe3b97d143200f</td>
+      <td>2017-05-05 10:05:12</td>
+      <td>49.75</td>
+      <td>20.80</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>0017afd5076e074a48f1f1a4c7bac9c5</td>
+      <td>1</td>
+      <td>fe59a1e006df3ac42bf0ceb876d70969</td>
+      <td>25c5c91f63607446a97b143d2d535d31</td>
+      <td>2017-04-24 22:25:19</td>
+      <td>809.10</td>
+      <td>44.29</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>001862358bf858722e1e2ae000cfed8b</td>
+      <td>1</td>
+      <td>c6dd917a0be2a704582055949915ab32</td>
+      <td>7a67c85e85bb2ce8582c35f2203ad736</td>
+      <td>2018-02-13 19:10:37</td>
+      <td>99.99</td>
+      <td>13.72</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>0019c29108428acffd089c36103c9440</td>
+      <td>1</td>
+      <td>28b4eced95a52d9c437a4caf9d311b95</td>
+      <td>77530e9772f57a62c906e1c21538ab82</td>
+      <td>2018-03-12 06:50:26</td>
+      <td>59.90</td>
+      <td>19.95</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>001ab0a7578dd66cd4b0a71f5b6e1e41</td>
+      <td>1</td>
+      <td>0b0172eb0fd18479d29c3bc122c058c2</td>
+      <td>5656537e588803a555b8eb41f07a944b</td>
+      <td>2018-01-04 02:33:42</td>
+      <td>24.89</td>
+      <td>17.63</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>001ab0a7578dd66cd4b0a71f5b6e1e41</td>
+      <td>2</td>
+      <td>0b0172eb0fd18479d29c3bc122c058c2</td>
+      <td>5656537e588803a555b8eb41f07a944b</td>
+      <td>2018-01-04 02:33:42</td>
+      <td>24.89</td>
+      <td>17.63</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>001ab0a7578dd66cd4b0a71f5b6e1e41</td>
+      <td>3</td>
+      <td>0b0172eb0fd18479d29c3bc122c058c2</td>
+      <td>5656537e588803a555b8eb41f07a944b</td>
+      <td>2018-01-04 02:33:42</td>
+      <td>24.89</td>
+      <td>17.63</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>001ac194d4a326a6fa99b581e9a3d963</td>
+      <td>1</td>
+      <td>dbaee28f4ee64465838a229582d77520</td>
+      <td>ffc470761de7d0232558ba5e786e57b7</td>
+      <td>2018-07-10 02:51:10</td>
+      <td>54.00</td>
+      <td>8.54</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>001b76dd48a5b1eee3e87778daa40df8</td>
+      <td>1</td>
+      <td>dbb67791e405873b259e4656bf971246</td>
+      <td>9c0e69c7bf2619675bbadf47b43f655a</td>
+      <td>2018-04-02 17:50:17</td>
+      <td>81.99</td>
+      <td>13.01</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>001c85b5f68d2be0cb0797afc9e8ce9a</td>
+      <td>1</td>
+      <td>84f456958365164420cfc80fbe4c7fab</td>
+      <td>4a3ca9315b744ce9f8e9374361493884</td>
+      <td>2017-11-29 22:38:47</td>
+      <td>99.00</td>
+      <td>13.71</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>001d8f0e34a38c37f7dba2a37d4eba8b</td>
+      <td>1</td>
+      <td>e67307ff0f15ade43fcb6e670be7a74c</td>
+      <td>f4aba7c0bca51484c30ab7bdc34bcdd1</td>
+      <td>2017-05-18 17:35:11</td>
+      <td>18.99</td>
+      <td>7.78</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>001d8f0e34a38c37f7dba2a37d4eba8b</td>
+      <td>2</td>
+      <td>e67307ff0f15ade43fcb6e670be7a74c</td>
+      <td>f4aba7c0bca51484c30ab7bdc34bcdd1</td>
+      <td>2017-05-18 17:35:11</td>
+      <td>18.99</td>
+      <td>7.78</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>001daeb0eddc45b999bad0801ad9d273</td>
+      <td>1</td>
+      <td>30c01cc81c9eb80469371743813789cc</td>
+      <td>f45122a9ab94eb4f3f8953578bc0c560</td>
+      <td>2017-05-25 02:15:20</td>
+      <td>38.33</td>
+      <td>16.79</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>001dbc16dc51075e987543d23a0507c7</td>
+      <td>1</td>
+      <td>777d2e438a1b645f3aec9bd57e92672c</td>
+      <td>4a3ca9315b744ce9f8e9374361493884</td>
+      <td>2017-02-01 13:17:57</td>
+      <td>69.90</td>
+      <td>18.00</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>001e7ba991be1b19605ca0316e7130f9</td>
+      <td>1</td>
+      <td>884fa3cd42986ba480ea2f8ae4e25ff7</td>
+      <td>3340ef1913fb70d28420f6ceb685c339</td>
+      <td>2017-03-23 11:47:37</td>
+      <td>195.00</td>
+      <td>18.21</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>001e7cf2ad6bef3ade12ebc56ceaf0f3</td>
+      <td>1</td>
+      <td>bdcf6a834e8faa30dac3886c7a58e92e</td>
+      <td>2a84855fd20af891be03bc5924d2b453</td>
+      <td>2018-05-22 10:59:50</td>
+      <td>35.90</td>
+      <td>15.20</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>0020262c8a370bd5a174ea6a2a267321</td>
+      <td>1</td>
+      <td>a5341e3f8155dbb3e62323d3ea289729</td>
+      <td>ff063b022a9a0aab91bad2c9088760b7</td>
+      <td>2017-12-04 09:58:07</td>
+      <td>79.50</td>
+      <td>21.05</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>0020a222f55eb79a372d0efee3cca688</td>
+      <td>1</td>
+      <td>e19ddcc85537b41f22116c8d5425ef46</td>
+      <td>8a32e327fe2c1b3511609d81aaf9f042</td>
+      <td>2017-08-21 03:03:44</td>
+      <td>29.99</td>
+      <td>15.10</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>002175704e8b209f61b9ad5cfd92b60e</td>
+      <td>1</td>
+      <td>e6b6e13cf71449a457269f425b89dc74</td>
+      <td>b2ba3715d723d245138f291a6fe42594</td>
+      <td>2018-04-26 12:30:57</td>
+      <td>109.90</td>
+      <td>13.21</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>00229e4e43f7a7e0b9dd819ad43268d3</td>
+      <td>1</td>
+      <td>13fcfc313dfb2217e5ee3000a702f9ef</td>
+      <td>c3cfdc648177fdbbbb35635a37472c53</td>
+      <td>2018-04-10 16:50:11</td>
+      <td>74.90</td>
+      <td>16.49</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>0025081dcf9330f9a5052ae82c6ce396</td>
+      <td>1</td>
+      <td>4e3f399366b0047a572b6682f9bb166e</td>
+      <td>5f3ae9136c875522250f8184f253413a</td>
+      <td>2018-04-02 16:35:20</td>
+      <td>14.95</td>
+      <td>18.23</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>00254baeb6c932b0a8aeead91fbd02b5</td>
+      <td>1</td>
+      <td>18901878788fec7ddc55e64d1ace8187</td>
+      <td>e8b4225284fbb02d16f200513f1f395d</td>
+      <td>2018-05-14 22:14:46</td>
+      <td>149.90</td>
+      <td>43.11</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>00259a44fcad3fc0474329e925d14fc3</td>
+      <td>1</td>
+      <td>0c4d0a08f95c7b7dc5dc7402bfdafd4c</td>
+      <td>9f505651f4a6abe901a56cdc21508025</td>
+      <td>2018-01-03 17:59:35</td>
+      <td>19.99</td>
+      <td>14.10</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>0025c5d1a8ca53a240ec2634bb4492ea</td>
+      <td>1</td>
+      <td>35537536ed2b4c561b4018bf3abf54e0</td>
+      <td>955fee9216a65b617aa5c0531780ce60</td>
+      <td>2018-07-10 09:30:09</td>
+      <td>390.00</td>
+      <td>29.39</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>002611a77fe03d076285fd4ca95db77c</td>
+      <td>1</td>
+      <td>fe077ec80df6b4ee60bb4498d5ab1962</td>
+      <td>87142160b41353c4e5fca2360caf6f92</td>
+      <td>2018-03-07 02:49:09</td>
+      <td>135.00</td>
+      <td>21.75</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>002691433f09002ac9ca0c4e8dbb8ead</td>
+      <td>1</td>
+      <td>430d215740da7fdda91cc938f8fd92f6</td>
+      <td>0887a9f087bcd5d9f6642b52f897fc6c</td>
+      <td>2017-02-06 21:18:03</td>
+      <td>104.00</td>
+      <td>16.43</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>0026a368634b6e6f34f33b1499773a30</td>
+      <td>1</td>
+      <td>892832da5b05b0f54578e1f14f193c22</td>
+      <td>12b9676b00f60f3b700e83af21824c0e</td>
+      <td>2017-11-10 21:26:45</td>
+      <td>149.00</td>
+      <td>15.80</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>00275bce676303c3bfd7292aefdfa223</td>
+      <td>1</td>
+      <td>6490b9f63b0b595e1c1402b46b0f50ad</td>
+      <td>99eaacc9e6046db1c82b163c5f84869f</td>
+      <td>2017-12-04 03:32:47</td>
+      <td>279.90</td>
+      <td>13.46</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>00276d5c3491fbf55305e26891040df9</td>
+      <td>1</td>
+      <td>71c89e9d8fa274b017279aa322cd0e19</td>
+      <td>8f78f0903005064036736c7173a5c2ed</td>
+      <td>2018-02-27 11:55:57</td>
+      <td>44.90</td>
+      <td>23.22</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>002834535f7a609a5c68266f173fa59e</td>
+      <td>1</td>
+      <td>df3655ac9aa8c6cbfa63bdd8d3b09c50</td>
+      <td>ea8482cd71df3c1969d7b9473ff13abc</td>
+      <td>2018-07-26 17:44:36</td>
+      <td>37.99</td>
+      <td>19.18</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>0028de0ca693a1bb26448916a81105cc</td>
+      <td>1</td>
+      <td>059344baebbeaa42fa9f2bbe11b1583e</td>
+      <td>955fee9216a65b617aa5c0531780ce60</td>
+      <td>2018-08-21 03:35:17</td>
+      <td>29.99</td>
+      <td>15.31</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>002955b0acc63d04f6724a31967e82bd</td>
+      <td>1</td>
+      <td>d9bdf643d95cb89844c0da1a0df1d16e</td>
+      <td>058fd0aa2bfdb2274e05e1ae971dabb6</td>
+      <td>2017-12-22 15:51:31</td>
+      <td>120.00</td>
+      <td>15.59</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>0029c5db35ef291ce99d1262012e7daa</td>
+      <td>1</td>
+      <td>7614c62b86a81021243e438cfde78ccc</td>
+      <td>900ba814c251a692506d7834c1218441</td>
+      <td>2018-09-03 03:50:23</td>
+      <td>492.75</td>
+      <td>21.62</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>0029f17cf0e7640c5cb6825af681303f</td>
+      <td>1</td>
+      <td>01c666c82f414c762ad21bffa56e8b49</td>
+      <td>d3dcf0604eabf0224fbd5948b5e02f69</td>
+      <td>2018-05-08 12:14:52</td>
+      <td>94.90</td>
+      <td>18.54</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>002af7fa9eb99d1456bceb6a13d6fc0b</td>
+      <td>1</td>
+      <td>c2ece64199af7a53793ed9612a89a8cd</td>
+      <td>6c7d50c24b3ccd2fd83b44d8bb34e073</td>
+      <td>2018-02-22 19:46:50</td>
+      <td>88.34</td>
+      <td>21.11</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>002b430ff89b3a24c31a1170acbbedea</td>
+      <td>1</td>
+      <td>cc47c0863559499f01b4cad750929d10</td>
+      <td>7a67c85e85bb2ce8582c35f2203ad736</td>
+      <td>2017-06-26 22:10:14</td>
+      <td>199.99</td>
+      <td>65.56</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>002b4e6fa42cd4a22cc86abc18fe9c05</td>
+      <td>1</td>
+      <td>a6f449f6257f26e556013151cee46b4b</td>
+      <td>b1a81260566c1bac3114a6d124413f27</td>
+      <td>2018-03-15 10:35:37</td>
+      <td>99.90</td>
+      <td>19.67</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>002c9def9c9b951b1bec6d50753c9891</td>
+      <td>1</td>
+      <td>2d9ff06c8870a518f5f6909774e140fb</td>
+      <td>00720abe85ba0859807595bbf045a33b</td>
+      <td>2018-05-21 17:32:03</td>
+      <td>78.00</td>
+      <td>8.90</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>002c9def9c9b951b1bec6d50753c9891</td>
+      <td>2</td>
+      <td>2d9ff06c8870a518f5f6909774e140fb</td>
+      <td>00720abe85ba0859807595bbf045a33b</td>
+      <td>2018-05-21 17:32:03</td>
+      <td>78.00</td>
+      <td>8.90</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>002d040018d12a3853c059f7f23ab5b1</td>
+      <td>1</td>
+      <td>97c58626cc3e15d514d2095f69650220</td>
+      <td>fe2032dab1a61af8794248c8196565c9</td>
+      <td>2017-11-27 03:47:23</td>
+      <td>155.00</td>
+      <td>14.84</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>002f16b7bc4530031b7d90f791b12d8a</td>
+      <td>1</td>
+      <td>d54c5b81fc2b38707588dd4eddc7c594</td>
+      <td>0241d4d5d36f10f80c644447315af0bd</td>
+      <td>2018-07-04 17:11:12</td>
+      <td>249.90</td>
+      <td>34.23</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>002f19a65a2ddd70a090297872e6d64e</td>
+      <td>1</td>
+      <td>9eae06d51aaa383b2bed5547a19d581c</td>
+      <td>1835b56ce799e6a4dc4eddc053f04066</td>
+      <td>2018-03-27 13:15:27</td>
+      <td>53.98</td>
+      <td>23.31</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>002f98c0f7efd42638ed6100ca699b42</td>
+      <td>1</td>
+      <td>d41dc2f2979f52d75d78714b378d4068</td>
+      <td>7299e27ed73d2ad986de7f7c77d919fa</td>
+      <td>2017-08-10 09:30:15</td>
+      <td>8.99</td>
+      <td>32.57</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>002f98c0f7efd42638ed6100ca699b42</td>
+      <td>2</td>
+      <td>880be32f4db1d9f6e2bec38fb6ac23ab</td>
+      <td>fa40cc5b934574b62717c68f3d678b6d</td>
+      <td>2017-08-10 09:30:15</td>
+      <td>44.90</td>
+      <td>7.16</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>0030d783f979fbc5981e75613b057344</td>
+      <td>1</td>
+      <td>ae27a5524edb2c8dc4656c670f458fb7</td>
+      <td>8e6cc767478edae941d9bd9eb778d77a</td>
+      <td>2017-11-29 23:13:38</td>
+      <td>60.60</td>
+      <td>17.67</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>0030ff924c38549807645976adeef2c0</td>
+      <td>1</td>
+      <td>bd7cab8de4d7943286634023cc06f8ff</td>
+      <td>855668e0971d4dfd7bef1b6a4133b41b</td>
+      <td>2018-04-06 17:10:21</td>
+      <td>225.00</td>
+      <td>67.24</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>00310b0c75bb13015ec4d82d341865a4</td>
+      <td>1</td>
+      <td>c8e7c2ef329fcda4a233e7e2f8bb8b7d</td>
+      <td>a2deecd5398f5df4987110c80a1972a3</td>
+      <td>2018-08-17 15:04:25</td>
+      <td>39.90</td>
+      <td>15.38</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>00324b3eda39ba5ecce3945823e3594c</td>
+      <td>1</td>
+      <td>54e5063e43f27f747d592eb24e913150</td>
+      <td>0dd184061fb0eaa7ca37932c68ab91c5</td>
+      <td>2018-04-17 09:12:11</td>
+      <td>76.00</td>
+      <td>34.07</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>0032d07457ae9c806c79368d7d9ce96b</td>
+      <td>1</td>
+      <td>08279c494018541f71443c07d77560f8</td>
+      <td>e333046ce6517bd8bb510291d44f0130</td>
+      <td>2018-03-15 19:28:51</td>
+      <td>159.00</td>
+      <td>27.19</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>003324c70b19a16798817b2b3640e721</td>
+      <td>1</td>
+      <td>2b939dc9b176d7fa21594d588815d4a4</td>
+      <td>dbc22125167c298ef99da25668e1011f</td>
+      <td>2017-05-24 19:22:34</td>
+      <td>102.90</td>
+      <td>14.45</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>003324c70b19a16798817b2b3640e721</td>
+      <td>2</td>
+      <td>2b939dc9b176d7fa21594d588815d4a4</td>
+      <td>dbc22125167c298ef99da25668e1011f</td>
+      <td>2017-05-24 19:22:34</td>
+      <td>102.90</td>
+      <td>14.45</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>00335b686d693c7d72deeb12f8e89227</td>
+      <td>1</td>
+      <td>87b08e712cc4c9fe70984c5a24b29e2f</td>
+      <td>f00e21b1e91a79653163b7fd8f293ff1</td>
+      <td>2017-07-28 03:45:26</td>
+      <td>63.90</td>
+      <td>16.89</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>00335f75ea6a4455b524a8dd177067f5</td>
+      <td>1</td>
+      <td>e1bf2f209fd2b08e1af3ed71732d9008</td>
+      <td>70c27847eca8195c983ed7e798c56743</td>
+      <td>2018-05-02 22:10:29</td>
+      <td>168.80</td>
+      <td>8.21</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>00337fe25a3780b3424d9ad7c5a4b35e</td>
+      <td>1</td>
+      <td>1f9799a175f50c9fa725984775cac5c5</td>
+      <td>cfb1a033743668a192316f3c6d1d2671</td>
+      <td>2017-09-29 17:50:16</td>
+      <td>59.90</td>
+      <td>9.94</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>00337fe25a3780b3424d9ad7c5a4b35e</td>
+      <td>2</td>
+      <td>13944d17b257432717fd260e69853140</td>
+      <td>cfb1a033743668a192316f3c6d1d2671</td>
+      <td>2017-09-29 17:50:16</td>
+      <td>59.90</td>
+      <td>9.94</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>003423b755b562962a6225a8de40d12e</td>
+      <td>1</td>
+      <td>84904413b82eee333a3f79137e8d197e</td>
+      <td>23c38debaffe4a25a30fdbd9b586a13f</td>
+      <td>2018-07-18 04:25:09</td>
+      <td>232.75</td>
+      <td>28.58</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>00345f338696283410b7977d2e3efc89</td>
+      <td>1</td>
+      <td>0f2fd0a589cb7849c1dbedbd4109c2f8</td>
+      <td>516e7738bd8f735ac19a010ee5450d8d</td>
+      <td>2018-08-23 15:11:40</td>
+      <td>48.90</td>
+      <td>18.44</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>0035246a40f520710769010f752e7507</td>
+      <td>1</td>
+      <td>8a6187b2665118d5095f99a25fd7ba7a</td>
+      <td>4a3ca9315b744ce9f8e9374361493884</td>
+      <td>2017-08-23 01:25:39</td>
+      <td>87.00</td>
+      <td>12.11</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0035c0b07126fe9c24a325216fb96064</td>
+      <td>1</td>
+      <td>ec02a5d380128f7a188e9ce8f3ddd832</td>
+      <td>8444e55c1f13cd5c179851e5ca5ebd00</td>
+      <td>2017-12-12 01:29:45</td>
+      <td>131.90</td>
+      <td>18.54</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0035e6b7ade84b3f5b86bd49814793df</td>
+      <td>1</td>
+      <td>71a5f1c2a5fd9889ef26b5ac22aec9c6</td>
+      <td>537eb890efff034a88679788b647c564</td>
+      <td>2018-02-27 03:31:08</td>
+      <td>19.90</td>
+      <td>14.10</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0036757472ece3dde52fd4bfd929c90e</td>
+      <td>1</td>
+      <td>4c1bbc12438daec98a77243c2bf7a3ba</td>
+      <td>7c67e1448b00f6e969d365cea6b010ab</td>
+      <td>2018-08-08 15:10:11</td>
+      <td>136.99</td>
+      <td>66.04</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>0036887767dea4bd43b1a88cd0d9477a</td>
+      <td>1</td>
+      <td>3a264b078bf20e98f315ff65c23fa263</td>
+      <td>46dc3b2cc0980fb8ec44634e21d2718e</td>
+      <td>2017-10-19 01:07:30</td>
+      <td>399.99</td>
+      <td>23.64</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+</body>
+</html>

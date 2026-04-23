@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Olist Data Preview - Olist Order Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #0d6efd; margin-bottom: 20px; }
+        .table-container { overflow-x: auto; }
+        .nav-link { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Olist Dashboard</a>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="olist_customers_preview.html">Customers</a><a class="nav-link" href="olist_sellers_preview.html">Sellers</a><a class="nav-link" href="olist_order_reviews_preview.html">Order_reviews</a><a class="nav-link" href="olist_order_payments_preview.html">Order_payments</a><a class="nav-link" href="olist_orders_preview.html">Orders</a><a class="nav-link" href="olist_geolocation_preview.html">Geolocation</a><a class="nav-link" href="olist_products_preview.html">Products</a><a class="nav-link" href="olist_order_items_preview.html">Order_items</a>
+                </div>
+            </div>
+        </nav>
+        <h1>Olist Order Reviews</h1>
+        <p class="text-muted">Mostrando as primeiras 100 linhas de olist_order_reviews_dataset_202604222030.csv</p>
+        <div class="table-container">
+            <table border="1" class="dataframe table table-hover table-bordered table-sm">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>review_id</th>
+      <th>order_id</th>
+      <th>review_score</th>
+      <th>review_comment_title</th>
+      <th>review_comment_message</th>
+      <th>review_creation_date</th>
+      <th>review_answer_timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7bc2406110b926393aa56f80a40eba40</td>
+      <td>73fc7af87114b39712e6da79b0a377eb</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-18 21:46:59</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7bc2406110b926393aa56f80a40eba40</td>
+      <td>73fc7af87114b39712e6da79b0a377eb</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-18 21:46:59</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7bc2406110b926393aa56f80a40eba40</td>
+      <td>73fc7af87114b39712e6da79b0a377eb</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-18 21:46:59</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7bc2406110b926393aa56f80a40eba40</td>
+      <td>73fc7af87114b39712e6da79b0a377eb</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-18 21:46:59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>80e641a11e56f04c1ad469d5645fdfde</td>
+      <td>a548910a1c6147796b98fdf73dbeba33</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-10 00:00:00</td>
+      <td>2018-03-11 03:05:13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>228ce5500dc1d8e020d8d1322874b6f0</td>
+      <td>f9e4b658b201a9f2ecdecbb34bed034b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-02-17 00:00:00</td>
+      <td>2018-02-18 14:36:24</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>e64fb393e7b32834bb789ff8bb30750e</td>
+      <td>658677c97b385a9be170737859d3511b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Recebi bem antes do prazo estipulado.</td>
+      <td>2017-04-21 00:00:00</td>
+      <td>2017-04-21 22:02:06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>f7c4243c7fe1938f181bec41a392bdeb</td>
+      <td>8e6bfb81e283fa7e4f11123a3fb894f1</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Parabéns lojas lannister adorei comprar pela Internet seguro e prático Parabéns a todos feliz Páscoa</td>
+      <td>2018-03-01 00:00:00</td>
+      <td>2018-03-02 10:26:53</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15197aa66ff4d0650b5434f1b46cda19</td>
+      <td>b18dcdf73be66366873cd26c5724d1dc</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-13 00:00:00</td>
+      <td>2018-04-16 00:39:37</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>07f9bee5d1b850860defd761afa7ff16</td>
+      <td>e48aa0d2dcec3a2e87348811bcfdf22b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-07-16 00:00:00</td>
+      <td>2017-07-18 19:30:34</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7c6400515c67679fbee952a7525281ef</td>
+      <td>c31a859e34e3adac22f376954e19b39d</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-08-14 00:00:00</td>
+      <td>2018-08-14 21:36:06</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>a3f6f7f6f433de0aefbb97da197c554c</td>
+      <td>9c214ac970e84273583ab523dfafd09b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-05-17 00:00:00</td>
+      <td>2017-05-18 12:05:37</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>8670d52e15e00043ae7de4c01cc2fe06</td>
+      <td>b9bf720beb4ab3728760088589c62129</td>
+      <td>4</td>
+      <td>recomendo</td>
+      <td>aparelho eficiente. no site a marca do aparelho esta impresso como 3desinfector e ao chegar esta com outro nome...atualizar com a marca correta uma vez que é o mesmo aparelho</td>
+      <td>2018-05-22 00:00:00</td>
+      <td>2018-05-23 16:45:47</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>c9cfd2d5ab5911836ababae136c3a10c</td>
+      <td>cdf9aa68e72324eeb25c7de974696ee2</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-12-23 00:00:00</td>
+      <td>2017-12-26 14:36:03</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>96052551d87e5f62e6c9f6974ec392e9</td>
+      <td>3d374c9e46530bb5ed4a7648915306a6</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-12-19 00:00:00</td>
+      <td>2017-12-20 10:25:22</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>4b49719c8a200003f700d3d986ea1a19</td>
+      <td>9d6f15f95d01e79bd1349cc208361f09</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>Mas um pouco ,travando...pelo valor ta Boa.\r\n</td>
+      <td>2018-02-16 00:00:00</td>
+      <td>2018-02-20 10:52:22</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>23f75a37effc35d9a915b4e1ad483793</td>
+      <td>2eaf8e099d871cd5c22b83b5ea8f6e0e</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-28 00:00:00</td>
+      <td>2018-03-30 15:10:55</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>9a0abbb668bafb95a6d2b05db43284c4</td>
+      <td>d7bd0e4afdf94846eb73642b4e3e75c3</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-04-30 00:00:00</td>
+      <td>2017-05-03 00:02:22</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3948b09f7c818e2d86c9a546758b2335</td>
+      <td>e51478e7e277a83743b6f9991dbfa3fb</td>
+      <td>5</td>
+      <td>Super recomendo</td>
+      <td>Vendedor confiável, produto ok e entrega antes do prazo.</td>
+      <td>2018-05-23 00:00:00</td>
+      <td>2018-05-24 03:00:01</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>9314d6f9799f5bfba510cc7bcd468c01</td>
+      <td>0dacf04c5ad59fd5a0cc1faa07c34e39</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>GOSTARIA DE SABER O QUE HOUVE, SEMPRE RECEBI E ESSA COMPRA AGORA ME DECPCIONOU</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-20 21:25:45</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>8e15a274d95600fa14f8be64e37a0e67</td>
+      <td>ff1581e08b3011021e7c7de592ddc81e</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-24 00:00:00</td>
+      <td>2018-03-26 15:58:32</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>fdbdb2629a7cde0f66657acc92084e7f</td>
+      <td>70a752414a13d09cc1f2b437b914b28e</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-09-29 00:00:00</td>
+      <td>2017-10-02 01:12:49</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>373cbeecea8286a2b66c97b1b157ec46</td>
+      <td>583174fbe37d3d5f0d6661be3aad1786</td>
+      <td>1</td>
+      <td>Não chegou meu produto</td>
+      <td>Péssimo</td>
+      <td>2018-08-15 00:00:00</td>
+      <td>2018-08-15 04:10:37</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>a2ff510ca4e059c3fefc7a7866571f6f</td>
+      <td>a9953b2f0b1665ac7586cc5a6ac8f58c</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-10-06 00:00:00</td>
+      <td>2017-10-08 22:36:05</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>80c70bc263881ba6525f6cee1d94ac87</td>
+      <td>ae168dfba236919411fe08f336fefa44</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-17 00:00:00</td>
+      <td>2018-04-04 19:41:11</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>d21bbc789670eab777d27372ab9094cc</td>
+      <td>4fc44d78867142c627497b60a7e0228a</td>
+      <td>5</td>
+      <td>Ótimo</td>
+      <td>Loja nota 10</td>
+      <td>2018-07-10 00:00:00</td>
+      <td>2018-07-11 14:10:25</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>7bcb3c758c67f23638262c731493e848</td>
+      <td>7c9956750739a47dba7a6928ba2f0245</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-09-09 00:00:00</td>
+      <td>2017-10-17 02:25:47</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0e0190b9db53b689b285d3f3916f8441</td>
+      <td>79832b7cb59ac6f887088ffd686e1d5e</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>obrigado pela atençao amim dispensada</td>
+      <td>2017-12-01 00:00:00</td>
+      <td>2017-12-09 22:58:58</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>66e4430c5bc6b7e3773886bf1c14d912</td>
+      <td>84cec4f65c7a4f2f54c294a30224a594</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-06-23 00:00:00</td>
+      <td>2017-06-27 00:52:02</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>bf566b3910c328733baf7fca7d2be041</td>
+      <td>a59a15e4b6085c752d338431dc68d464</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-11-01 00:00:00</td>
+      <td>2017-11-01 20:25:30</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>fe3db7c069d694bab50cc43463f91608</td>
+      <td>2ca73e2ff9e3a186ad1e1ffb9b1d9c10</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>A compra foi realizada facilmente.\r\nA entrega foi efetuada muito antes do prazo dado.\r\nO produto já começou a ser usado e até o presente,\r\nsem problemas.</td>
+      <td>2018-03-23 00:00:00</td>
+      <td>2018-04-01 00:27:51</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>e07eee7ad7666276bd8b27fbd83fd1ff</td>
+      <td>68b3cbc68e4cd1fe19bec35f1d3bb7ee</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>relógio muito bonito e barato.</td>
+      <td>2018-03-29 00:00:00</td>
+      <td>2018-04-02 14:19:31</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2c5e27fc178bde7ac173c9c62c31b070</td>
+      <td>0ce9a24111d850192a933fcaab6fbad3</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Não gostei ! Comprei gato por lebre</td>
+      <td>2017-12-13 00:00:00</td>
+      <td>2017-12-16 07:14:07</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>540e7bbb2d06cfb7f85f3a88ba7ac97f</td>
+      <td>cf73e2cb1f4a9480ed70c154da3d954a</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-18 00:00:00</td>
+      <td>2018-01-18 19:12:30</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>6a18a4001ae7fd911b3b9fb13686d105</td>
+      <td>8ba3f3a9292fbc22a8b7dff752bbcd37</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-07-19 00:00:00</td>
+      <td>2017-07-20 10:38:48</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>58044bca115705a48fe0e00a21390c54</td>
+      <td>68e55ca79d04a79f20d4bfc0146f4b66</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Sempre compro pela Internet e a entrega ocorre antes do prazo combinado, que acredito ser o prazo máximo. No stark o prazo máximo já se esgotou e ainda não recebi o produto.</td>
+      <td>2018-04-08 00:00:00</td>
+      <td>2018-04-09 12:22:39</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>19a52a2297e5289ab4187d238d335982</td>
+      <td>677c865b89aa97e7dbeb4bfbb50bbcfd</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-08-25 00:00:00</td>
+      <td>2018-08-26 22:02:59</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>c92cdd7dd544a01aa35137f901669cdf</td>
+      <td>37e7875cdce5a9e5b3a692971f370151</td>
+      <td>4</td>
+      <td>Muito bom.</td>
+      <td>Recebi exatamente o que esperava. As demais encomendas de outros vendedores atrasaram, mas esta chegou no prazo.</td>
+      <td>2018-06-07 00:00:00</td>
+      <td>2018-06-09 18:44:02</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>c0f4c8301f8c29d6f53d239e194bb4c2</td>
+      <td>04db86e3493b3724ac4bd3c9a397e23c</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-09-12 00:00:00</td>
+      <td>2017-09-13 14:33:49</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>08c9d79ec0eba1d252e3f52f14b8e6a9</td>
+      <td>e029f708df3cc108b3264558771605c6</td>
+      <td>5</td>
+      <td>Bom</td>
+      <td>Recomendo ,</td>
+      <td>2018-06-13 00:00:00</td>
+      <td>2018-06-13 22:54:44</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>2170c9452c2216457b36003fe2969fbb</td>
+      <td>af32671d0b8ce510a94d9111d97371d3</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>muito boa</td>
+      <td>2018-03-22 00:00:00</td>
+      <td>2018-03-30 23:37:25</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>b193ff3c9f32a01f3a0d9ae26b94d244</td>
+      <td>e2e6ee1ed2d7f2f36b05d234983bd7a0</td>
+      <td>5</td>
+      <td>Maravilhoso!</td>
+      <td>Tô completamente apaixonada, loja super responsável e confiável!</td>
+      <td>2018-08-10 00:00:00</td>
+      <td>2018-08-11 00:22:13</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>9fd59cd04b42f600df9f25e54082a8d1</td>
+      <td>3c314f50bc654f3c4e317b055681dff9</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Nada de chegar o meu pedido.</td>
+      <td>2017-04-21 00:00:00</td>
+      <td>2017-04-23 05:37:03</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>ab3056e4fb5a36df4b58c1746e4a6b8f</td>
+      <td>aad1dcbe4c9fe2e3486e5e04c6649097</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-05-13 00:00:00</td>
+      <td>2018-05-14 16:29:15</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>eb26c2bfb5030f57dcef30d3f111eb1e</td>
+      <td>88096595631e8d26b658306256e3ce34</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-02-08 00:00:00</td>
+      <td>2018-02-10 04:28:43</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>caf7d6d68090fedf0f47b27aff4b4eaf</td>
+      <td>c186ebe3937470a2f562a2dc0bc74dd7</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-12-05 00:00:00</td>
+      <td>2017-12-07 23:34:56</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>86c5cfa7fcbde303f704b60a78ced7d6</td>
+      <td>a6456e781cb962cc3f412b04de4fed7b</td>
+      <td>5</td>
+      <td>Entrega perfeita</td>
+      <td>Muito bom. muito cheiroso.</td>
+      <td>2018-06-13 00:00:00</td>
+      <td>2018-06-14 17:29:03</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>6f3eb43ec2f5092cf04c8d705864a8ac</td>
+      <td>f3a9c397a2fa5a2366b4b96bc15737f6</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-11 00:00:00</td>
+      <td>2018-03-14 00:38:50</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>3dc0777d97733a1d066f5b781e91577f</td>
+      <td>44a9994228432b835c3a4e720b6a41ab</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-29 00:00:00</td>
+      <td>2018-03-31 00:13:07</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>e363a3c172db72d6a8b82d0726cd2ddb</td>
+      <td>1a36784e5c696071dad8a242f26b230f</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-25 00:00:00</td>
+      <td>2018-02-18 23:03:20</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>890ec1767be8eb104877db6d68eaade5</td>
+      <td>b3271f5ebce80cbecb67c5b88487a44a</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>otimo vendedor chegou ate antes do prazo , adorei o produto</td>
+      <td>2017-05-13 00:00:00</td>
+      <td>2017-05-14 02:57:19</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>23f570a1b0db9566bee04521a0410c54</td>
+      <td>82c5edeff15e09a0460d292874766132</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-09-22 00:00:00</td>
+      <td>2017-09-23 13:57:39</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>7d9ac3e98adc0c8ad579e6a2257d79f9</td>
+      <td>dfa48852c93427261c98fb2e01f33bea</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Processo de compra tranquilo e eficiente.</td>
+      <td>2018-04-24 00:00:00</td>
+      <td>2018-04-25 16:01:03</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>c41bd21983e298a240410ebb391bf075</td>
+      <td>9562b424b05978a493db2a5122ecab1f</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Tomara q dure pois é de pelinho.</td>
+      <td>2017-05-19 00:00:00</td>
+      <td>2017-05-21 03:04:35</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>e233e51d11511bf30e568c76360ace52</td>
+      <td>548df2c6e5f089574614894bca78acf5</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>recebi somente 1 controle Midea Split ESTILO.\r\nFaltou Controle Remoto para Ar Condicionado Consul</td>
+      <td>2018-01-28 00:00:00</td>
+      <td>2018-02-04 11:06:15</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>1a74d76543e1b419b48daebee364c281</td>
+      <td>14861b02076ed7da9471988265a0104b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-07-14 00:00:00</td>
+      <td>2018-07-16 20:09:42</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>1edd1a85161468a77e5fcb165be9b294</td>
+      <td>d8e17cc85323061493b16b68a130bcff</td>
+      <td>5</td>
+      <td>Ótimo</td>
+      <td>NaN</td>
+      <td>2018-06-02 00:00:00</td>
+      <td>2018-06-02 23:15:37</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>94c4db81ff5c234f53b54a15a8a41583</td>
+      <td>3fb155b4897652f5cdf1b5efff32a465</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-12-15 00:00:00</td>
+      <td>2017-12-17 14:43:35</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>3d94fd645cdaacc8c9f0dc0a2a1f5166</td>
+      <td>4d483bf690ca21bdc005df9b623673c7</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>boa</td>
+      <td>2017-03-21 00:00:00</td>
+      <td>2017-03-22 00:58:49</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>cb6fe4f91f83d9222b7c8e14959055e1</td>
+      <td>84226f5c73669d7711ca44aa9cac602a</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-05-10 00:00:00</td>
+      <td>2018-05-13 22:51:53</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>45a523faa4defdf60118a90301b8a23e</td>
+      <td>26c4ac9998f72d4fcdca3c6e27089f1b</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-10-27 00:00:00</td>
+      <td>2017-10-27 16:12:52</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>6eab2c9b7ea4975a0b0357a4c464b356</td>
+      <td>55101b36a58251926b6cbfdb540c0461</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-05-31 00:00:00</td>
+      <td>2018-06-04 23:44:16</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>500c05500aa275953129f49799ee5c73</td>
+      <td>8a9424899aac432d80d8e580932b5ee9</td>
+      <td>5</td>
+      <td>MT lindo</td>
+      <td>MT lindo</td>
+      <td>2018-07-25 00:00:00</td>
+      <td>2018-07-25 21:37:22</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>399133d47ddc5f40df57c1ceba4e4540</td>
+      <td>603d76b730c972775ccf2a910bf23490</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-03 00:00:00</td>
+      <td>2018-04-03 23:39:36</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>6a0969d0769d2f3ff6438809a1cc455e</td>
+      <td>32638fbca8d1a197e649fd5138e12049</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Ocorreu tudo como contratado sendo a entrega realizada antes do prazo \r\n Estou satisfeita\r\n</td>
+      <td>2017-06-02 00:00:00</td>
+      <td>2017-06-03 13:12:07</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>8a64945e89526e68bc16383391590232</td>
+      <td>71960e6af960919256a958a3633e1040</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Amei achei lindo ,muito delicado adorei</td>
+      <td>2018-04-18 00:00:00</td>
+      <td>2018-04-18 22:30:45</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>ca7402594d96f3231ee1bbae27da1e29</td>
+      <td>36782087b0d4f8cd6daa340872006259</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-02-20 00:00:00</td>
+      <td>2018-02-21 01:40:57</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>c0dbf9a325d2a2fece43873be47191e1</td>
+      <td>b324f4270850cbba23533b9a9d3434a9</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>Ótima loja para parceria: rápidíssima, produtos bem embalados e de qualidade! Só o custo do frete que foi meio azedo.</td>
+      <td>2018-04-04 00:00:00</td>
+      <td>2018-04-06 15:43:39</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>9924ac6169f2edc95ca3394e529f9580</td>
+      <td>a3ba7fa5266d62188949da3d6ccc3884</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-02-27 00:00:00</td>
+      <td>2018-03-02 08:33:35</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>e12a8d938f3092e010627d001f91d137</td>
+      <td>b3dca2e199b13ddabab4ed77d79ee9f6</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-06-03 00:00:00</td>
+      <td>2018-06-06 12:41:24</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>109b5ce2dd11bb8460eff3b86da6fefc</td>
+      <td>25362fbf6aac4b01a28dee1e076acc26</td>
+      <td>5</td>
+      <td>Ótimo Produto!</td>
+      <td>Recomendo o vendedor...</td>
+      <td>2018-08-17 00:00:00</td>
+      <td>2018-08-17 21:47:08</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>6d06808638ec0701bccd70bc8d462c28</td>
+      <td>97d2f8fe76f2f253b8291e17b5383884</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>O produto não chegou no prazo estipulado e causou transtorno, pq programei a viagem de férias do meu filho, baseado no prazo. Moro na Bahia e ele em Cuiabá sozinho. Agora, a casa está vazia.</td>
+      <td>2016-12-09 00:00:00</td>
+      <td>2016-12-19 14:10:43</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>750d4311e8ddb6cba549ee86f06f0cca</td>
+      <td>4b32a4cdfc1b80066a8ee3a4b7a2094f</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Produto entregue como solicitado, e com muita brevidade. Parabéns!\r\n</td>
+      <td>2017-08-09 00:00:00</td>
+      <td>2017-08-09 12:03:45</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>951a3591f5bcc0b0c558461c9bf49d8e</td>
+      <td>801524a8fbd37484e8d8c23448f113b5</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-07-14 00:00:00</td>
+      <td>2018-07-14 21:04:31</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>77ed4f94b3638d1f0b0a2dd781c11a8c</td>
+      <td>5f8772295e1adb4e4832c988d6b631b6</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-10 00:00:00</td>
+      <td>2018-04-12 10:28:20</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>2a3eba09af2fbcd3a20580e62e7b7465</td>
+      <td>366df9c0b0d5d46f8afc476dc4ca7671</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-31 00:00:00</td>
+      <td>2018-02-01 02:09:13</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>8b230a1373c6dc4bd867099fda1d7039</td>
+      <td>071251fe3b3493294536f03737a8a679</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>Eu comprei duas unidades e só recebi uma e agora o que faço?</td>
+      <td>2017-11-09 00:00:00</td>
+      <td>2017-11-10 10:38:37</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>4a1c0e7a111f33f2be53506db4887b1a</td>
+      <td>0feb8ce954124d3e3d8338c573a9c523</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-08-28 00:00:00</td>
+      <td>2018-08-29 02:00:24</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>cb2fc3e5711b5ae85e0491ee18af63ed</td>
+      <td>34e6d418f368f8079ae152bc178bc66a</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>Produto bom, porém o que veio para mim não condiz com a foto do anúncio.</td>
+      <td>2018-01-31 00:00:00</td>
+      <td>2018-01-31 23:29:21</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>60c714ed14cef913944a3147094a4742</td>
+      <td>9ac05114800f02bfaa783bd76842dbe2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Produto muito inferior, mal acabado.</td>
+      <td>2018-07-03 00:00:00</td>
+      <td>2018-07-05 19:03:52</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>b42460e68676135205af8b8c13baf6ae</td>
+      <td>5b2e79428198e5ce482f9ec1bd1014c3</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-07-29 00:00:00</td>
+      <td>2017-08-01 18:43:09</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>505587fad6e7130f579fe9f02017ede4</td>
+      <td>64ff87188034c4f3dcd52e63db7d045f</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-06-14 00:00:00</td>
+      <td>2018-06-18 22:53:04</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>c45811d9f90e22a81155b3a1e4a5c2e8</td>
+      <td>491f193fc52075598871cfe6f19976d4</td>
+      <td>5</td>
+      <td>RECOMENDO SEMPRE!!</td>
+      <td>O kit mochila patrulha canina é lindo!! Meu netinho vai amar!! Obrigada!!</td>
+      <td>2018-06-19 00:00:00</td>
+      <td>2018-06-19 17:44:05</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>e29ab4a671400c41322e4855de633c6a</td>
+      <td>17b296b73ebefd6213299342b09f097f</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Maravilha</td>
+      <td>2017-08-09 00:00:00</td>
+      <td>2017-08-11 23:28:46</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>c577faa817a66c6f1492728435f53cd0</td>
+      <td>97e11582eb8cdd7b83e35a4243d81f79</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-01-12 00:00:00</td>
+      <td>2018-01-14 22:44:58</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>8c6537ae1519a3c0375e4fd45438344b</td>
+      <td>a9a75c64cb5e9f7bc92e68ec13f05c45</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-06 00:00:00</td>
+      <td>2018-04-07 03:11:49</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>34e5d18f3bb64d586812f8f1d8b53097</td>
+      <td>bf6861804f97bcf7644f603c5bcf7784</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-03-31 00:00:00</td>
+      <td>2017-04-01 23:43:01</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>5733e2aeeb52b99d044a2a3644e1305d</td>
+      <td>5abb6c1ea24afdc6e26076bfaa7539cb</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-02-23 00:00:00</td>
+      <td>2018-02-23 11:06:24</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>a34d2c4ace97245460e240e07db0212d</td>
+      <td>9cd3b6a2b07667e425975a219b4fc382</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-05-15 00:00:00</td>
+      <td>2018-05-20 13:57:26</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>9bdb93e1339cdbc9bbfd95c5df00f82b</td>
+      <td>72b9d86fe4e984d9879013b9ecbb25db</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-24 00:00:00</td>
+      <td>2018-04-25 20:28:48</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>0bd4dcc4f6c4621baf37f73495cad8c4</td>
+      <td>a11cd01ac67beef7e8bf09740d8a35c1</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>Entrega no prazo</td>
+      <td>2017-03-23 00:00:00</td>
+      <td>2017-03-23 21:20:16</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>888f11883ff85fa5c07e6ae1192d85c4</td>
+      <td>248907ae8054cb8e93d5aa44857779b4</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>Cumpriu o prometido na compra e com o uma entrega em tempo satisfatório</td>
+      <td>2018-01-04 00:00:00</td>
+      <td>2018-01-05 23:30:00</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>65dfeb60c40e3cbb0a1838285d86f885</td>
+      <td>a2714ecbf6eeb3bb9cd7dba6dc1c5e82</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>Pedi reembolso e sem resposta até momento</td>
+      <td>2018-03-08 00:00:00</td>
+      <td>2018-03-08 12:27:34</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>50a1eaa2f96d6f3e02d0cd68d92bab75</td>
+      <td>4a7cf245701068d38d441791b735e4bd</td>
+      <td>5</td>
+      <td>***** Recomendo</td>
+      <td>Super rápido.</td>
+      <td>2018-05-10 00:00:00</td>
+      <td>2018-05-11 03:08:49</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>1090909faae22e5ab76903e8493063f1</td>
+      <td>a1341cb83bbf1b47392f4a3685d56bad</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-07 00:00:00</td>
+      <td>2018-03-07 15:32:23</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>7b2d3a4794961271f9150b21fecfeed0</td>
+      <td>2964eb001b521cc23017f1c007a6712b</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-04-06 00:00:00</td>
+      <td>2018-04-08 18:42:33</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>31b63ea961f9f43c21209d729d1c78e5</td>
+      <td>46d2d651f006b9b9440d1aa37d89c894</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-08-17 00:00:00</td>
+      <td>2018-08-31 03:13:36</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>4d36f8266245b00faebc520e9cd963c0</td>
+      <td>b1cc044d321053348a5e482ca7e6b2e3</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2018-03-17 00:00:00</td>
+      <td>2018-03-17 09:29:47</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>71bc170a5ad41ee9dee95f82a17860a8</td>
+      <td>a90b081d0efa436e072d5328ecd904a4</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-08-03 00:00:00</td>
+      <td>2017-08-03 23:40:22</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>c5be8de5421e658a45042d6ca6a4ff64</td>
+      <td>61665389f0cccf5ec8135e3b05efc714</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-12-12 00:00:00</td>
+      <td>2017-12-13 22:58:34</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+</body>
+</html>

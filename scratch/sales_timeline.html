@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linha do Tempo de Vendas</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style>
+        body { padding: 40px; background-color: #f0f2f5; }
+        .year-section { background: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .year-title { color: #0d6efd; border-bottom: 2px solid #0d6efd; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; }
+        .total-annual { font-size: 1.5rem; font-weight: bold; color: #198754; text-align: right; margin-top: 15px; border-top: 1px solid #dee2e6; padding-top: 10px; }
+        .category-table { font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='d-flex justify-content-between align-items-center mb-5'>
+            <h1>📈 Linha do Tempo de Vendas Anuais</h1>
+            <a href='index.html' class='btn btn-outline-primary'>Voltar ao Painel</a>
+        </div>
+
+        <div class='year-section'>
+            <h2 class='year-title'>Ano: 2016</h2>
+            <div class='table-responsive'>
+                <table class='table table-hover category-table'>
+                    <thead class='table-light'>
+                        <tr>
+                            <th>Categoria</th>
+                            <th class='text-end'>Valor Total (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <td>Moveis Decoracao</td>
+                            <td class='text-end'>5,880.78</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Perfumaria</td>
+                            <td class='text-end'>5,688.70</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Beleza Saude</td>
+                            <td class='text-end'>4,687.48</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Brinquedos</td>
+                            <td class='text-end'>4,465.09</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Consoles Games</td>
+                            <td class='text-end'>3,882.26</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Relogios Presentes</td>
+                            <td class='text-end'>3,360.24</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Esporte Lazer</td>
+                            <td class='text-end'>3,333.64</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Automotivo</td>
+                            <td class='text-end'>1,833.25</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Climatizacao</td>
+                            <td class='text-end'>1,707.09</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Bebes</td>
+                            <td class='text-end'>1,630.16</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Informatica Acessorios</td>
+                            <td class='text-end'>1,399.32</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Ferramentas Jardim</td>
+                            <td class='text-end'>1,359.88</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletronicos</td>
+                            <td class='text-end'>1,306.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Market Place</td>
+                            <td class='text-end'>1,306.19</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Escritorio</td>
+                            <td class='text-end'>1,300.88</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Utilidades Domesticas</td>
+                            <td class='text-end'>1,287.07</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cool Stuff</td>
+                            <td class='text-end'>1,111.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia Fixa</td>
+                            <td class='text-end'>704.88</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pet Shop</td>
+                            <td class='text-end'>689.68</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia</td>
+                            <td class='text-end'>559.58</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Bolsas E Acessorios</td>
+                            <td class='text-end'>519.20</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cama Mesa Banho</td>
+                            <td class='text-end'>478.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Industria Comercio E Negocios</td>
+                            <td class='text-end'>359.60</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Tecnicos</td>
+                            <td class='text-end'>267.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Audio</td>
+                            <td class='text-end'>156.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fraldas Higiene</td>
+                            <td class='text-end'>134.90</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Interesse Geral</td>
+                            <td class='text-end'>119.50</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Alimentos</td>
+                            <td class='text-end'>79.90</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Feminina</td>
+                            <td class='text-end'>54.90</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Calcados</td>
+                            <td class='text-end'>29.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Masculina</td>
+                            <td class='text-end'>24.90</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            <div class='total-annual'>Soma Total das Vendas em 2016: R$ 49,720.03</div>
+        </div>
+    
+        <div class='year-section'>
+            <h2 class='year-title'>Ano: 2017</h2>
+            <div class='table-responsive'>
+                <table class='table table-hover category-table'>
+                    <thead class='table-light'>
+                        <tr>
+                            <th>Categoria</th>
+                            <th class='text-end'>Valor Total (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <td>Cama Mesa Banho</td>
+                            <td class='text-end'>498,440.43</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Relogios Presentes</td>
+                            <td class='text-end'>492,794.50</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Beleza Saude</td>
+                            <td class='text-end'>481,755.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Esporte Lazer</td>
+                            <td class='text-end'>452,148.84</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Informatica Acessorios</td>
+                            <td class='text-end'>405,078.69</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cool Stuff</td>
+                            <td class='text-end'>393,620.65</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Decoracao</td>
+                            <td class='text-end'>337,213.12</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Brinquedos</td>
+                            <td class='text-end'>307,975.48</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Ferramentas Jardim</td>
+                            <td class='text-end'>268,882.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Automotivo</td>
+                            <td class='text-end'>243,255.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Utilidades Domesticas</td>
+                            <td class='text-end'>231,073.49</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Perfumaria</td>
+                            <td class='text-end'>214,974.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pcs</td>
+                            <td class='text-end'>159,230.79</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Bebes</td>
+                            <td class='text-end'>153,334.03</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia</td>
+                            <td class='text-end'>142,814.64</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Escritorio</td>
+                            <td class='text-end'>129,009.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletroportateis</td>
+                            <td class='text-end'>101,367.10</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Papelaria</td>
+                            <td class='text-end'>94,582.92</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Consoles Games</td>
+                            <td class='text-end'>88,394.45</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pet Shop</td>
+                            <td class='text-end'>85,081.70</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Instrumentos Musicais</td>
+                            <td class='text-end'>81,883.93</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Bolsas E Acessorios</td>
+                            <td class='text-end'>81,565.15</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Malas Acessorios</td>
+                            <td class='text-end'>76,136.19</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletronicos</td>
+                            <td class='text-end'>56,011.16</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Conforto</td>
+                            <td class='text-end'>37,688.59</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Sala</td>
+                            <td class='text-end'>35,284.41</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia Fixa</td>
+                            <td class='text-end'>30,372.84</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Agro Industria E Comercio</td>
+                            <td class='text-end'>29,179.20</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Climatizacao</td>
+                            <td class='text-end'>28,253.01</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletrodomesticos 2</td>
+                            <td class='text-end'>24,064.88</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Construcao</td>
+                            <td class='text-end'>23,952.45</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletrodomesticos</td>
+                            <td class='text-end'>23,850.83</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Construcao</td>
+                            <td class='text-end'>20,315.28</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Interesse Geral</td>
+                            <td class='text-end'>19,630.49</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Market Place</td>
+                            <td class='text-end'>19,506.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Cozinha Area De Servico Jantar E Jardim</td>
+                            <td class='text-end'>18,576.64</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Audio</td>
+                            <td class='text-end'>17,570.57</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Calcados</td>
+                            <td class='text-end'>15,036.11</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artes</td>
+                            <td class='text-end'>9,291.79</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Jardim</td>
+                            <td class='text-end'>8,907.69</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Quarto</td>
+                            <td class='text-end'>8,847.61</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Alimentos</td>
+                            <td class='text-end'>8,737.89</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Industria Comercio E Negocios</td>
+                            <td class='text-end'>8,736.57</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Masculina</td>
+                            <td class='text-end'>8,471.05</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Seguranca</td>
+                            <td class='text-end'>8,264.80</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Alimentos Bebidas</td>
+                            <td class='text-end'>7,447.74</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Underwear E Moda Praia</td>
+                            <td class='text-end'>7,072.55</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Tablets Impressao Imagem</td>
+                            <td class='text-end'>6,260.45</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Tecnicos</td>
+                            <td class='text-end'>5,762.22</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Bebidas</td>
+                            <td class='text-end'>5,004.06</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Dvds Blu Ray</td>
+                            <td class='text-end'>4,866.68</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Sinalizacao E Seguranca</td>
+                            <td class='text-end'>4,442.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Ferramentas</td>
+                            <td class='text-end'>4,087.29</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Iluminacao</td>
+                            <td class='text-end'>4,053.48</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artigos De Natal</td>
+                            <td class='text-end'>2,854.92</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Colchao E Estofado</td>
+                            <td class='text-end'>2,548.28</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Feminina</td>
+                            <td class='text-end'>2,132.08</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artigos De Festas</td>
+                            <td class='text-end'>1,863.39</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Esporte</td>
+                            <td class='text-end'>1,750.01</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Musica</td>
+                            <td class='text-end'>1,558.39</td>
+                        </tr>
+        
+                        <tr>
+                            <td>La Cuisine</td>
+                            <td class='text-end'>1,273.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Importados</td>
+                            <td class='text-end'>1,123.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Portateis Casa Forno E Cafe</td>
+                            <td class='text-end'>821.95</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cine Foto</td>
+                            <td class='text-end'>695.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cds Dvds Musicais</td>
+                            <td class='text-end'>665.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Conforto 2</td>
+                            <td class='text-end'>609.18</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pc Gamer</td>
+                            <td class='text-end'>519.96</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Infanto Juvenil</td>
+                            <td class='text-end'>399.88</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Seguros E Servicos</td>
+                            <td class='text-end'>283.29</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Flores</td>
+                            <td class='text-end'>270.50</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artes E Artesanato</td>
+                            <td class='text-end'>151.89</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fraldas Higiene</td>
+                            <td class='text-end'>76.00</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            <div class='total-annual'>Soma Total das Vendas em 2017: R$ 6,049,759.67</div>
+        </div>
+    
+        <div class='year-section'>
+            <h2 class='year-title'>Ano: 2018</h2>
+            <div class='table-responsive'>
+                <table class='table table-hover category-table'>
+                    <thead class='table-light'>
+                        <tr>
+                            <th>Categoria</th>
+                            <th class='text-end'>Valor Total (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <tr>
+                            <td>Beleza Saude</td>
+                            <td class='text-end'>772,238.15</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Relogios Presentes</td>
+                            <td class='text-end'>708,850.94</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cama Mesa Banho</td>
+                            <td class='text-end'>538,069.26</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Esporte Lazer</td>
+                            <td class='text-end'>532,566.49</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Informatica Acessorios</td>
+                            <td class='text-end'>505,476.31</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Utilidades Domesticas</td>
+                            <td class='text-end'>399,888.10</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Decoracao</td>
+                            <td class='text-end'>386,668.59</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Automotivo</td>
+                            <td class='text-end'>347,631.15</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Bebes</td>
+                            <td class='text-end'>256,800.70</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cool Stuff</td>
+                            <td class='text-end'>240,559.20</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Ferramentas Jardim</td>
+                            <td class='text-end'>215,013.87</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia</td>
+                            <td class='text-end'>180,293.31</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Perfumaria</td>
+                            <td class='text-end'>178,462.17</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Brinquedos</td>
+                            <td class='text-end'>171,506.03</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Escritorio</td>
+                            <td class='text-end'>143,650.11</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Papelaria</td>
+                            <td class='text-end'>136,360.31</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pet Shop</td>
+                            <td class='text-end'>128,544.03</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Construcao</td>
+                            <td class='text-end'>124,362.31</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Instrumentos Musicais</td>
+                            <td class='text-end'>109,614.95</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletronicos</td>
+                            <td class='text-end'>102,928.59</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletroportateis</td>
+                            <td class='text-end'>89,281.48</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletrodomesticos 2</td>
+                            <td class='text-end'>89,252.86</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Bolsas E Acessorios</td>
+                            <td class='text-end'>70,739.19</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Consoles Games</td>
+                            <td class='text-end'>65,188.51</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Malas Acessorios</td>
+                            <td class='text-end'>64,293.79</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pcs</td>
+                            <td class='text-end'>63,732.34</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Construcao</td>
+                            <td class='text-end'>59,135.67</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Eletrodomesticos</td>
+                            <td class='text-end'>56,320.70</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Portateis Casa Forno E Cafe</td>
+                            <td class='text-end'>46,623.76</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Agro Industria E Comercio</td>
+                            <td class='text-end'>43,351.27</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Iluminacao</td>
+                            <td class='text-end'>37,026.52</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Sala</td>
+                            <td class='text-end'>33,632.15</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Audio</td>
+                            <td class='text-end'>32,960.94</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Seguranca</td>
+                            <td class='text-end'>32,279.72</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Industria Comercio E Negocios</td>
+                            <td class='text-end'>30,573.44</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Telefonia Fixa</td>
+                            <td class='text-end'>28,505.28</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Cozinha Area De Servico Jantar E Jardim</td>
+                            <td class='text-end'>27,751.73</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Interesse Geral</td>
+                            <td class='text-end'>27,106.89</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Climatizacao</td>
+                            <td class='text-end'>25,064.86</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Conforto</td>
+                            <td class='text-end'>20,883.45</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Alimentos</td>
+                            <td class='text-end'>20,575.62</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Bebidas</td>
+                            <td class='text-end'>17,424.64</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Sinalizacao E Seguranca</td>
+                            <td class='text-end'>17,066.24</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Jardim</td>
+                            <td class='text-end'>16,808.20</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artes</td>
+                            <td class='text-end'>14,910.85</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Tecnicos</td>
+                            <td class='text-end'>13,066.84</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Construcao Ferramentas Ferramentas</td>
+                            <td class='text-end'>11,816.66</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Quarto</td>
+                            <td class='text-end'>11,181.17</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Calcados</td>
+                            <td class='text-end'>8,496.67</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Alimentos Bebidas</td>
+                            <td class='text-end'>7,731.74</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Market Place</td>
+                            <td class='text-end'>7,565.57</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cine Foto</td>
+                            <td class='text-end'>6,238.46</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artigos De Natal</td>
+                            <td class='text-end'>5,945.90</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Musica</td>
+                            <td class='text-end'>4,475.96</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Portateis Cozinha E Preparadores De Alimentos</td>
+                            <td class='text-end'>3,968.53</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Livros Importados</td>
+                            <td class='text-end'>3,515.86</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artigos De Festas</td>
+                            <td class='text-end'>2,621.79</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Underwear E Moda Praia</td>
+                            <td class='text-end'>2,469.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Masculina</td>
+                            <td class='text-end'>2,301.87</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Moveis Colchao E Estofado</td>
+                            <td class='text-end'>1,819.80</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Artes E Artesanato</td>
+                            <td class='text-end'>1,662.12</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fraldas Higiene</td>
+                            <td class='text-end'>1,356.69</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Tablets Impressao Imagem</td>
+                            <td class='text-end'>1,267.96</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Dvds Blu Ray</td>
+                            <td class='text-end'>1,132.71</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Pc Gamer</td>
+                            <td class='text-end'>1,025.99</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Flores</td>
+                            <td class='text-end'>839.54</td>
+                        </tr>
+        
+                        <tr>
+                            <td>La Cuisine</td>
+                            <td class='text-end'>781.00</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Feminina</td>
+                            <td class='text-end'>616.66</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Esporte</td>
+                            <td class='text-end'>369.50</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Fashion Roupa Infanto Juvenil</td>
+                            <td class='text-end'>169.97</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Casa Conforto 2</td>
+                            <td class='text-end'>151.09</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Cds Dvds Musicais</td>
+                            <td class='text-end'>65.00</td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            <div class='total-annual'>Soma Total das Vendas em 2018: R$ 7,312,628.72</div>
+        </div>
+    
+    </div>
+</body>
+</html>
