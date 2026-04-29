@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlação Financeira - Olist 2018</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <style>
+        body { background-color: #fcfcfc; font-family: 'Inter', sans-serif; padding: 40px 0; }
+        .header-section { background: #e67e22; color: white; padding: 40px; border-radius: 24px; margin-bottom: 40px; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(230,126,34,0.1); background: white; }
+        .chart-container { height: 450px; padding: 20px; }
+        .insight-card { border-left: 5px solid #e67e22; background: #fffaf5; padding: 25px; border-radius: 12px; height: 100%; }
+        .btn-back { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; text-decoration: none; border-radius: 12px; padding: 8px 16px; }
+        .btn-back:hover { background: rgba(255,255,255,0.3); color: white; }
+        .highlight { color: #e67e22; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class="header-section text-center position-relative shadow-lg">
+            <a href="dashboard_2018.html" class="btn-back position-absolute top-0 start-0 m-4">← Voltar</a>
+            <h1 class="fw-bold">📊 Correlação: Volume vs Faturamento</h1>
+            <p class="opacity-90">Análise de Eficiência Financeira Mensal - 2018</p>
+        </div>
+
+        <div class='card mb-5'>
+            <div class='card-body'>
+                <div class='chart-container'><canvas id='correlationChart'></canvas></div>
+            </div>
+        </div>
+
+        <h3 class="fw-bold mb-4">💡 Análise de Insights Financeiros</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="insight-card">
+                    <h5 class="fw-bold mb-3">📈 Estabilidade do Ticket Médio</h5>
+                    <p class="text-muted small">Mesmo com a oscilação de volume em maio (greve) e junho (copa), a linha de faturamento acompanhou a curva de pedidos de forma proporcional até julho.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-card">
+                    <h5 class="fw-bold mb-3">⚖️ Anomalia de Agosto: Volume vs Ticket</h5>
+                    <p class="text-muted small">Agosto teve <span class="highlight">+220 pedidos</span> que Julho, mas faturou <span class="highlight">R$ 44k a menos</span>. Isso ocorreu devido a uma queda de **7,3% no Ticket Médio** (de R$ 169 para R$ 157) e à saída de categorias premium (Relógios) do Top 5.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-card">
+                    <h5 class="fw-bold mb-3">🎯 Pico de Eficiência (Mar-Mai)</h5>
+                    <p class="text-muted small">O período pré-crise apresentou a melhor sincronia. Em março, o faturamento atingiu <span class="highlight">R$ 1,16M</span>, o maior valor do primeiro semestre.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-warning mb-5 p-4 rounded-4 border-0 shadow-sm">
+            <h5 class="fw-bold">📌 Conclusão da Correlação</h5>
+            <p class="mb-0">A correlação entre volume e valor em 2018 é <span class="fw-bold">fortemente positiva</span>. Isso sugere que o crescimento da Olist no período foi orgânico e baseado em volume de transações, e não em aumentos pontuais de preços ou mudanças drásticas no mix de produtos (SKUs).</p>
+        </div>
+
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #f8fafc; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Base para contagem de <code>order_id</code> únicos por mês.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-success px-3 py-2 mb-2">olist_order_payments_dataset</span>
+                            <p class="text-muted small">Agregação de <code>payment_value</code> para o faturamento mensal.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Correlação</h5>
+                    <p class="text-muted small">O cruzamento utiliza um <code>Inner Join</code> entre pedidos e pagamentos. O gráfico de eixo duplo permite visualizar a divergência entre a linha de volume (pedidos) e as barras de faturamento (reais), evidenciando o fenômeno de Agosto de 2018.</p>
+                    <h5 class="fw-bold text-primary mb-3 mt-4">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">order_id</span>
+                        <span class="badge bg-light text-dark border">payment_value</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctxCorr = document.getElementById('correlationChart').getContext('2d');
+        new Chart(ctxCorr, {
+            type: 'bar',
+            data: {
+                labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago"],
+                datasets: [
+                    {
+                        label: 'Volume de Vendas (Pedidos)',
+                        data: [7269, 6728, 7211, 6939, 6873, 6167, 6292, 6512],
+                        backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                        yAxisID: 'yVolume',
+                        order: 2
+                    },
+                    {
+                        label: 'Valor Pago (R$)',
+                        data: [1115004.18, 992463.34, 1159652.12, 1160785.48, 1153982.15, 1023880.5, 1066540.75, 1022425.32],
+                        type: 'line',
+                        borderColor: '#e67e22',
+                        backgroundColor: 'rgba(230, 126, 34, 0.1)',
+                        borderWidth: 4,
+                        pointRadius: 6,
+                        pointBackgroundColor: '#e67e22',
+                        yAxisID: 'yValue',
+                        order: 1,
+                        fill: false,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: { weight: 'bold' } } }
+                },
+                scales: {
+                    yVolume: {
+                        type: 'linear',
+                        position: 'left',
+                        title: { display: true, text: 'Volume de Pedidos', font: { weight: 'bold' } },
+                        grid: { display: false }
+                    },
+                    yValue: {
+                        type: 'linear',
+                        position: 'right',
+                        title: { display: true, text: 'Faturamento Total (R$)', font: { weight: 'bold' } },
+                        ticks: { callback: (v) => 'R$ ' + (v/1000).toFixed(0) + 'k' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

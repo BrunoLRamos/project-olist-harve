@@ -948,6 +948,41 @@
             <div class='total-annual'>Soma Total das Vendas em 2018: R$ 7,312,628.72</div>
         </div>
     
+        </div>
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #ffffff; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Agrupamento temporal por ano de compra.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-success px-3 py-2 mb-2">olist_order_items_dataset</span>
+                            <p class="text-muted small">Cálculo do valor total vendido por item.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-warning px-3 py-2 mb-2">olist_products_dataset</span>
+                            <p class="text-muted small">Mapeamento das categorias de produto.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Agregação</h5>
+                    <p class="text-muted small">A análise consolida o faturamento bruto anual somando os preços dos itens de cada pedido. O ranking exibe o desempenho histórico das categorias desde 2016, permitindo identificar o crescimento exponencial da plataforma entre 2017 e 2018.</p>
+                    <h5 class="fw-bold text-primary mb-3 mt-4">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">price</span>
+                        <span class="badge bg-light text-dark border">product_category_name</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

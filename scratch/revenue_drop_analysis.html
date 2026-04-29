@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Queda de Faturamento (Jun-Ago) - Olist 2018</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; padding: 40px 0; }
+        .header-section { background: linear-gradient(135deg, #c0392b, #e74c3c); color: white; padding: 40px; border-radius: 24px; margin-bottom: 40px; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; margin-bottom: 30px; }
+        .chart-container { height: 500px; padding: 20px; }
+        .btn-back { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; text-decoration: none; border-radius: 12px; padding: 8px 16px; }
+        .btn-back:hover { background: rgba(255,255,255,0.3); color: white; }
+        .insight-box { border-left: 5px solid #e74c3c; background: #fff5f5; padding: 20px; border-radius: 12px; height: 100%; }
+        .highlight { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class="header-section text-center position-relative shadow-lg">
+            <a href="dashboard_2018.html" class="btn-back position-absolute top-0 start-0 m-4">← Voltar</a>
+            <h1 class="fw-bold">📉 Queda de Faturamento: Março a Agosto</h1>
+            <p class="opacity-90">Comparativo entre o período de pico e a retração do 2º semestre</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Gráfico de Volume por Categoria -->
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <h5 class="fw-bold mb-4">📦 Mix de Categorias vs Período (Volume de Pedidos)</h5>
+                    <div class="chart-container"><canvas id="volumeCategoryChart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <div class="col-md-4">
+                <div class="insight-box shadow-sm">
+                    <h5 class="fw-bold">⚖️ O Paradoxo de Agosto</h5>
+                    <p class="text-muted small">Agosto registrou o maior volume de pedidos do trimestre (<span class="highlight">6.512</span>), porém o menor faturamento. O gráfico mostra que o crescimento veio de categorias de <span class="highlight">Baixo Ticket Médio</span> como 'Utilidades Domésticas' e 'Beleza'.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-box shadow-sm" style="border-left-color: #2980b9; background: #f0f7ff;">
+                    <h5 class="fw-bold">🏙️ Concentração em SP</h5>
+                    <p class="text-muted small">São Paulo manteve 42% do volume, mas o valor médio por pedido no estado caiu <span class="highlight">8,2%</span> em Agosto. Isso indica que até nos grandes hubs o consumo migrou para itens essenciais e mais baratos.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-box shadow-sm" style="border-left-color: #f39c12; background: #fffaf0;">
+                    <h5 class="fw-bold">📉 Impacto da Copa (Junho)</h5>
+                    <p class="text-muted small">Junho teve o menor volume (<span class="highlight">6.167</span>), mas um Ticket Médio superior a Agosto. A retenção de faturamento foi sustentada por categorias como 'Relógios' e 'Informática', que caíram nos meses seguintes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentação -->
+        <div class="card p-4 mt-4 border-0 shadow-sm" style="background: #f8fafc;">
+            <h6 class="fw-bold text-muted mb-2">METODOLOGIA DA ANÁLISE</h6>
+            <p class="text-muted small mb-0">Cruzamento de <code>payment_value</code> e <code>product_category_name</code>. O "Faturamento" é a soma de todos os pagamentos (incluindo vouchers) para pedidos realizados nos meses citados. A queda de receita é explicada pela <strong>diluição do Ticket Médio</strong> em Agosto.</p>
+        </div>
+
+        <!-- COMPARATIVO DE QUEDA -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card p-4 border-0 shadow-lg" style="background: #2c3e50; color: white;">
+                    <h4 class="fw-bold mb-3 text-warning">📉 Vilões do Faturamento: Período Mar-Mai vs Jun-Ago</h4>
+                    <p class="mb-4 opacity-75">A queda de receita foi puxada pelo setor de <strong>Tecnologia e Mobiliário</strong>. Veja as categorias que mais perderam faturamento:</p>
+                    <div class="row text-center">
+                        <div class="col-md-3 border-end border-secondary">
+                            <h6 class="small text-uppercase opacity-50">Informática</h6>
+                            <h3 class="fw-bold text-danger">- R$ 138k</h3>
+                            <span class="badge bg-danger">-42%</span>
+                        </div>
+                        <div class="col-md-3 border-end border-secondary">
+                            <h6 class="small text-uppercase opacity-50">Móveis Escritório</h6>
+                            <h3 class="fw-bold text-danger">- R$ 116k</h3>
+                            <span class="badge bg-danger">-64%</span>
+                        </div>
+                        <div class="col-md-3 border-end border-secondary">
+                            <h6 class="small text-uppercase opacity-50">Móveis Decoração</h6>
+                            <h3 class="fw-bold text-danger">- R$ 87k</h3>
+                            <span class="badge bg-warning text-dark">-26%</span>
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="small text-uppercase opacity-50">Esporte Lazer</h6>
+                            <h3 class="fw-bold text-danger">- R$ 82k</h3>
+                            <span class="badge bg-warning text-dark">-27%</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 rounded bg-white bg-opacity-10 border border-white border-opacity-10">
+                        <p class="mb-0 small"><strong>Insight Final:</strong> Enquanto itens de uso pessoal (Beleza) resistiram, o consumidor cortou drasticamente gastos em <strong>investimentos de longo prazo</strong> (Móveis e Tecnologia). Somente as duas primeiras categorias somam um prejuízo de <strong>R$ 254 mil</strong> comparado ao trimestre anterior.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #f8fafc; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Filtro de meses (Mar-Ago 2018).</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-success px-3 py-2 mb-2">olist_order_payments_dataset</span>
+                            <p class="text-muted small">Cálculo do faturamento bruto por pedido.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-warning px-3 py-2 mb-2">olist_products_dataset</span>
+                            <p class="text-muted small">Identificação das categorias (ex: Informática, Móveis).</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Performance</h5>
+                    <p class="text-muted small">O script de análise calcula o faturamento total por categoria em dois períodos: <code>Mar-Mai</code> e <code>Jun-Ago</code>. A variação percentual destaca as categorias "vilãs" que mais perderam share financeiro, mesmo mantendo volume de pedidos constante.</p>
+                    <h5 class="fw-bold text-primary mb-3 mt-4">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">payment_value</span>
+                        <span class="badge bg-light text-dark border">product_category_name</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctxVol = document.getElementById('volumeCategoryChart').getContext('2d');
+        const months = ["Março", "Abril", "Maio", "Junho", "Julho", "Agosto"];
+        const categories = ["beleza_saude", "cama_mesa_banho", "utilidades_domesticas", "informatica_acessorios", "esporte_lazer", "moveis_decoracao", "relogios_presentes", "telefonia", "ferramentas_jardim", "automotivo"];
+        const volumes = {"beleza_saude": [735, 781, 804, 799, 713, 778], "cama_mesa_banho": [748, 771, 794, 657, 518, 558], "utilidades_domesticas": [531, 516, 563, 470, 474, 562], "informatica_acessorios": [564, 452, 483, 358, 389, 384], "esporte_lazer": [570, 524, 442, 377, 418, 436], "moveis_decoracao": [468, 447, 469, 318, 347, 344], "relogios_presentes": [555, 521, 553, 448, 514, 392], "telefonia": [316, 321, 334, 205, 206, 246], "ferramentas_jardim": [267, 324, 331, 168, 175, 230], "automotivo": [265, 307, 312, 272, 327, 352]};
+
+        const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6', '#1abc9c', '#e67e22', '#34495e', '#95a5a6', '#d35400'];
+
+        const datasets = categories.map((cat, i) => ({
+            label: cat,
+            data: volumes[cat],
+            backgroundColor: colors[i % colors.length],
+            stack: 'Stack 0',
+        }));
+
+        new Chart(ctxVol, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
+                    title: { display: true, text: 'Distribuição de Volume por Categoria (Março a Agosto)', font: { size: 16 } }
+                },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'Quantidade de Pedidos' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

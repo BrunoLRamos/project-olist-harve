@@ -1,143 +1,131 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Olist Dashboard - 2018 Performance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Caso Olist - Home</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
-    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
     <style>
-        body { padding: 30px; background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
-        .section-title { color: #2c3e50; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px; margin-bottom: 20px; font-weight: bold; }
-        .card { border-radius: 15px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .chart-container { position: relative; height:350px; width:100% }
+        body { background-color: #f8fafc; font-family: 'Inter', system-ui, sans-serif; color: #1e293b; }
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            color: white; padding: 100px 20px; border-radius: 0 0 50px 50px;
+            margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .section-title { font-weight: 800; color: #0f172a; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        .section-title::after { content: ''; flex-grow: 1; height: 2px; background: #e2e8f0; }
+        .card { border: none; border-radius: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.06); transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .analysis-card {
+            background: white; padding: 30px; height: 100%; border-left: 6px solid #3b82f6;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .explorer-card { background: white; border: 1px solid #e2e8f0; }
+        .list-group-item { border: none; padding: 12px 0; background: transparent; transition: padding-left 0.2s ease; }
+        .list-group-item:hover { padding-left: 10px; color: #3b82f6; }
+        .btn-premium {
+            background: #3b82f6; color: white; border-radius: 12px; padding: 12px 24px;
+            font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.2s;
+        }
+        .btn-premium:hover { background: #2563eb; color: white; box-shadow: 0 4px 12px rgba(59,130,246,0.3); }
+        .badge-table { font-size: 0.7rem; padding: 4px 8px; border-radius: 6px; }
     </style>
 </head>
 <body>
-    <div class='container'>
-        <h1 class='text-center mb-5'>📊 Performance Dashboard Olist</h1>
-
-        <!-- SEÇÃO: GRÁFICO COMPARATIVO -->
-        <h3 class='section-title'>📈 Comparativo de Vendas (2017 vs 2018)</h3>
-        <div class='card shadow-sm mb-4'>
-            <div class='card-body'>
-                <div class='chart-container'><canvas id='comparisonChart'></canvas></div>
-            </div>
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">📦 Estudo de Caso Olist</h1>
+            <p class="lead opacity-75 fs-4">Análise exploratória e inteligência de performance e-commerce (2016-2018)</p>
         </div>
+    </div>
 
-        <!-- SEÇÃO: EVOLUÇÃO MENSAL 2018 -->
-        <h3 class='section-title'>📉 Evolução Mensal 2018 (MoM)</h3>
-        <div class='card shadow-sm mb-5'>
-            <div class='card-body'>
-                <table border="1" class="dataframe table table-sm table-hover text-center">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Mês</th>
-      <th>price</th>
-      <th>pct_change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Jan</td>
-      <td>R$ 950,030.36</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>Fev</td>
-      <td>R$ 844,178.71</td>
-      <td><span class="fw-bold text-danger">-11.14%</span></td>
-    </tr>
-    <tr>
-      <td>Mar</td>
-      <td>R$ 983,213.44</td>
-      <td><span class="fw-bold text-success">+16.47%</span></td>
-    </tr>
-    <tr>
-      <td>Abr</td>
-      <td>R$ 996,647.75</td>
-      <td><span class="fw-bold text-success">+1.37%</span></td>
-    </tr>
-    <tr>
-      <td>Mai</td>
-      <td>R$ 996,517.68</td>
-      <td><span class="fw-bold text-danger">-0.01%</span></td>
-    </tr>
-    <tr>
-      <td>Jun</td>
-      <td>R$ 865,124.31</td>
-      <td><span class="fw-bold text-danger">-13.19%</span></td>
-    </tr>
-    <tr>
-      <td>Jul</td>
-      <td>R$ 895,507.22</td>
-      <td><span class="fw-bold text-success">+3.51%</span></td>
-    </tr>
-    <tr>
-      <td>Ago</td>
-      <td>R$ 854,686.33</td>
-      <td><span class="fw-bold text-danger">-4.56%</span></td>
-    </tr>
-    <tr>
-      <td>Set</td>
-      <td>R$ 145.00</td>
-      <td><span class="fw-bold text-danger">-99.98%</span></td>
-    </tr>
-  </tbody>
-</table>
-                <div class='alert alert-light border-0 small text-muted mt-2'>
-                    * Variação (%) em relação ao mês anterior.
+    <div class="container pb-5">
+        <!-- SEÇÃO DE ANÁLISES -->
+        <h3 class="section-title">📊 Módulos de Análise</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card analysis-card">
+                    <div>
+                        <h4 class="fw-bold mb-3">📈 Dashboard de Performance 2018</h4>
+                        <p class="text-muted">Visão executiva das vendas, comparativo anual e evolução mensal detalhada.</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="dashboard_2018.html" class="btn-premium w-100 text-center">Acessar Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card analysis-card" style="border-left-color: #10b981;">
+                    <div>
+                        <h4 class="fw-bold mb-3">🗓️ Timeline Histórica Completa</h4>
+                        <p class="text-muted">Acompanhamento temporal de todo o dataset (2016-2018) identificando picos de demanda.</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="sales_timeline.html" class="btn-premium w-100 text-center" style="background: #10b981;">Ver Timeline</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SEÇÃO: EXPLORADOR DE TABELAS -->
-        <h3 class='section-title'>📁 Explorador de Dados</h3>
-        <div class='row g-3'>
-            <div class='col-md-3'><a href='olist_customers_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Clientes</a></div>
-            <div class='col-md-3'><a href='olist_orders_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Pedidos</a></div>
-            <div class='col-md-3'><a href='olist_products_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Produtos</a></div>
-            <div class='col-md-3'><a href='olist_order_reviews_preview.html' class='btn btn-warning w-100 py-3 shadow-sm fw-bold'>Avaliações ⭐</a></div>
-            <div class='col-md-3'><a href='olist_sellers_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Vendedores</a></div>
-            <div class='col-md-3'><a href='olist_order_items_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Itens</a></div>
-            <div class='col-md-3'><a href='olist_order_payments_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Pagamentos</a></div>
-            <div class='col-md-3'><a href='olist_geolocation_preview.html' class='btn btn-outline-primary w-100 py-3 shadow-sm'>Geolocalização</a></div>
+        <!-- SEÇÃO: RESULTADO DA ANÁLISE -->
+        <h3 class="section-title">🏆 Conclusão do Caso</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-12">
+                <div class="card p-5 border-0 shadow-lg text-white" style="background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 30px;">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="fw-bold mb-3">Relatório Final</h2>
+                            <p class="opacity-75 fs-5">Acesse o veredito final sobre a queda de faturamento em 2018, incluindo recomendações estratégicas e diagnóstico macroeconômico completo.</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <a href="olist_case_result.html" class="btn btn-warning btn-lg px-5 fw-bold rounded-pill shadow">Ver Resultado Final</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class='text-center mt-5'><a href='sales_timeline.html' class='btn btn-success px-5'>Ver Timeline Completa (2016-2018)</a></div>
+        <!-- SEÇÃO: EXPLORADOR DE TABELAS (MOVIDO) -->
+        <h3 class="section-title">📂 Explorador de Dados Brutos</h3>
+        <div class="card explorer-card shadow-sm p-4">
+            <div class="card-body">
+                <p class="text-muted mb-4">Acesse as visualizações completas e metadados de cada tabela do ecossistema Olist:</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-primary mb-3 text-uppercase small">Core Business</h6>
+                        <div class="list-group">
+                            <a href="olist_orders_preview.html" class="list-group-item d-flex justify-content-between align-items-center">
+                                📦 Pedidos <span class="badge bg-primary badge-table">Principal</span>
+                            </a>
+                            <a href="olist_order_items_preview.html" class="list-group-item">🛒 Itens dos Pedidos</a>
+                            <a href="olist_order_payments_preview.html" class="list-group-item">💳 Pagamentos</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-success mb-3 text-uppercase small">Logística e Rede</h6>
+                        <div class="list-group">
+                            <a href="olist_customers_preview.html" class="list-group-item">👥 Clientes</a>
+                            <a href="olist_sellers_preview.html" class="list-group-item">🏪 Vendedores</a>
+                            <a href="olist_geolocation_preview.html" class="list-group-item">📍 Geolocalização</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="fw-bold text-warning mb-3 text-uppercase small">Catálogo e Feedback</h6>
+                        <div class="list-group">
+                            <a href="olist_products_preview.html" class="list-group-item">🏷️ Produtos</a>
+                            <a href="olist_order_reviews_preview.html" class="list-group-item d-flex justify-content-between align-items-center">
+                                ⭐ Avaliações <span class="badge bg-warning text-dark badge-table">Feedback</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        const ctx = document.getElementById('comparisonChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                datasets: [
-                    {
-                        label: 'Vendas 2018 (R$)',
-                        data: [950030.36, 844178.71, 983213.4400000001, 996647.75, 996517.68, 865124.31, 895507.22, 854686.33, 145.0, 0.0, 0.0, 0.0],
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.05)',
-                        borderWidth: 4,
-                        tension: 0.3,
-                        fill: true
-                    },
-                    {
-                        label: 'Vendas 2017 (R$)',
-                        data: [120312.87, 247303.02, 374344.3, 359927.23, 506071.14, 433038.6, 498031.48, 573971.68, 624401.6900000001, 664219.43, 1010271.37, 743914.17],
-                        borderColor: '#95a5a6',
-                        borderWidth: 2,
-                        borderDash: [5, 5],
-                        tension: 0.3
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: { y: { beginAtZero: true, ticks: { callback: (v) => 'R$ ' + v.toLocaleString() } } }
-            }
-        });
-    </script>
+    <footer class="text-center py-5 text-muted small border-top mt-5">
+        &copy; 2026 - Estudo de Caso Olist - Inteligência de Dados
+    </footer>
 </body>
 </html>

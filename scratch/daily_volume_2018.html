@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Técnica de Crise - Olist 2018</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+    <style>
+        body { padding: 30px; background-color: #f1f5f9; font-family: 'Segoe UI', system-ui, sans-serif; color: #334155; }
+        .header-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white; padding: 50px; border-radius: 24px; margin-bottom: 40px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        .card { border-radius: 20px; border: none; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); background: white; }
+        .chart-container { position: relative; height: 450px; width: 100%; padding: 20px; }
+        .event-btn { 
+            padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; 
+            text-transform: uppercase; cursor: pointer; border: 2px solid transparent; 
+            transition: all 0.2s ease; background: #e2e8f0; color: #475569;
+        }
+        .event-btn:hover { transform: scale(1.05); }
+        .event-btn.active-strike { background: #fee2e2; color: #991b1b; border-color: #ef4444; }
+        .event-btn.active-cup { background: #dcfce7; color: #166534; border-color: #10b981; }
+        
+        .metric-card { border-bottom: 4px solid transparent; transition: all 0.3s ease; height: 100%; }
+        .clickable-card { cursor: pointer; }
+        .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.2); }
+        .border-danger-custom { border-bottom-color: #ef4444; }
+        .border-warning-custom { border-bottom-color: #f59e0b; }
+        .border-success-custom { border-bottom-color: #10b981; }
+        .border-info-custom { border-bottom-color: #3b82f6; }
+        
+        .doc-section { background: #fff; border-radius: 20px; padding: 40px; margin-top: 40px; border: 1px solid #e2e8f0; }
+        .table-badge { background: #3b82f6; color: white; padding: 4px 10px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; }
+        .field-badge { background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: monospace; border: 1px solid #e2e8f0; }
+        
+        .btn-back { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; backdrop-filter: blur(5px); text-decoration: none; }
+        .btn-back:hover { background: rgba(255,255,255,0.2); color: white; }
+        .annotation-box { background: #f8fafc; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 0 12px 12px 0; }
+    </style>
+</head>
+<body>
+    <div class='container-fluid px-5'>
+        <div class="header-section text-center position-relative">
+            <a href="dashboard_2018.html" class="btn btn-back position-absolute top-0 start-0 m-4">← Voltar à Análise de Pedidos</a>
+            <h1 class="display-5 fw-bold mb-2">📉 Análise de Crise: Olist 2018</h1>
+            <p class="lead opacity-75">Integração de dados e eventos macroeconômicos</p>
+        </div>
+
+        <div class='card mb-5'>
+            <div class='card-body'>
+                <div class="d-flex justify-content-between align-items-center mb-3 px-3">
+                    <h5 class="fw-bold m-0">Quantidade de pedidos</h5>
+                    <div class="d-flex gap-2">
+                        <button id="btnStrike" class="event-btn">🚛 Greve</button>
+                        <button id="btnCup" class="event-btn">⚽ Copa</button>
+                    </div>
+                </div>
+                <div class='chart-container'><canvas id='dailyVolumeChart'></canvas></div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <a href="cancellations_2018.html" class="text-decoration-none text-dark">
+                    <div class="card p-4 metric-card border-danger-custom clickable-card text-center">
+                        <h6 class="text-muted fw-bold text-danger">❌ Cancelamentos 2018</h6>
+                        <h2 class="fw-bold mb-1 text-danger">334</h2>
+                        <p class="small text-muted mb-0">Total Anual (Clique para ver)</p>
+                        <hr>
+                        <div class="small text-danger fw-bold">Análise Mensal Detalhada</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="unapproved_2018.html" class="text-decoration-none text-dark">
+                    <div class="card p-4 metric-card border-info-custom clickable-card text-center">
+                        <h6 class="text-muted fw-bold text-primary">🚫 Não Aprovados 2018</h6>
+                        <h2 class="fw-bold mb-1 text-primary">82</h2>
+                        <p class="small text-muted mb-0">Total Anual (Clique para ver)</p>
+                        <hr>
+                        <div class="small text-primary fw-bold">Falhas de Pagamento</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <h5 class="fw-bold mb-3">📝 Insights da Crise</h5>
+                    <div class="annotation-box mb-3">
+                        <strong>Impacto Logístico:</strong> A greve dos caminhoneiros (Maio) causou uma queda imediata no volume, mas o efeito residual foi sentido em Junho com a perda de confiança na entrega.
+                    </div>
+                    <div class="annotation-box">
+                        <strong>Efeito Copa:</strong> Durante os jogos do Brasil, observou-se uma paralisação quase total das transações por períodos de 4-6 horas.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #f8fafc; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Base central para extração do volume diário de pedidos através do campo <code>order_purchase_timestamp</code>.</p>
+                        </li>
+                    </ul>
+                    <h5 class="fw-bold text-primary mb-3">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">order_id</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                        <span class="badge bg-light text-dark border">order_status</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Processamento</h5>
+                    <p class="text-muted small">Os dados foram filtrados para o ano de 2018. A lógica aplica um agrupamento (<code>count</code>) por dia, ignorando o horário exato da compra para consolidar a visão diária. Pedidos com status 'canceled' foram mantidos para análise de impacto operacional total.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('dailyVolumeChart').getContext('2d');
+        const labels = ["2018-01-01", "2018-01-02", "2018-01-03", "2018-01-04", "2018-01-05", "2018-01-06", "2018-01-07", "2018-01-08", "2018-01-09", "2018-01-10", "2018-01-11", "2018-01-12", "2018-01-13", "2018-01-14", "2018-01-15", "2018-01-16", "2018-01-17", "2018-01-18", "2018-01-19", "2018-01-20", "2018-01-21", "2018-01-22", "2018-01-23", "2018-01-24", "2018-01-25", "2018-01-26", "2018-01-27", "2018-01-28", "2018-01-29", "2018-01-30", "2018-01-31", "2018-02-01", "2018-02-02", "2018-02-03", "2018-02-04", "2018-02-05", "2018-02-06", "2018-02-07", "2018-02-08", "2018-02-09", "2018-02-10", "2018-02-11", "2018-02-12", "2018-02-13", "2018-02-14", "2018-02-15", "2018-02-16", "2018-02-17", "2018-02-18", "2018-02-19", "2018-02-20", "2018-02-21", "2018-02-22", "2018-02-23", "2018-02-24", "2018-02-25", "2018-02-26", "2018-02-27", "2018-02-28", "2018-03-01", "2018-03-02", "2018-03-03", "2018-03-04", "2018-03-05", "2018-03-06", "2018-03-07", "2018-03-08", "2018-03-09", "2018-03-10", "2018-03-11", "2018-03-12", "2018-03-13", "2018-03-14", "2018-03-15", "2018-03-16", "2018-03-17", "2018-03-18", "2018-03-19", "2018-03-20", "2018-03-21", "2018-03-22", "2018-03-23", "2018-03-24", "2018-03-25", "2018-03-26", "2018-03-27", "2018-03-28", "2018-03-29", "2018-03-30", "2018-03-31", "2018-04-01", "2018-04-02", "2018-04-03", "2018-04-04", "2018-04-05", "2018-04-06", "2018-04-07", "2018-04-08", "2018-04-09", "2018-04-10", "2018-04-11", "2018-04-12", "2018-04-13", "2018-04-14", "2018-04-15", "2018-04-16", "2018-04-17", "2018-04-18", "2018-04-19", "2018-04-20", "2018-04-21", "2018-04-22", "2018-04-23", "2018-04-24", "2018-04-25", "2018-04-26", "2018-04-27", "2018-04-28", "2018-04-29", "2018-04-30", "2018-05-01", "2018-05-02", "2018-05-03", "2018-05-04", "2018-05-05", "2018-05-06", "2018-05-07", "2018-05-08", "2018-05-09", "2018-05-10", "2018-05-11", "2018-05-12", "2018-05-13", "2018-05-14", "2018-05-15", "2018-05-16", "2018-05-17", "2018-05-18", "2018-05-19", "2018-05-20", "2018-05-21", "2018-05-22", "2018-05-23", "2018-05-24", "2018-05-25", "2018-05-26", "2018-05-27", "2018-05-28", "2018-05-29", "2018-05-30", "2018-05-31", "2018-06-01", "2018-06-02", "2018-06-03", "2018-06-04", "2018-06-05", "2018-06-06", "2018-06-07", "2018-06-08", "2018-06-09", "2018-06-10", "2018-06-11", "2018-06-12", "2018-06-13", "2018-06-14", "2018-06-15", "2018-06-16", "2018-06-17", "2018-06-18", "2018-06-19", "2018-06-20", "2018-06-21", "2018-06-22", "2018-06-23", "2018-06-24", "2018-06-25", "2018-06-26", "2018-06-27", "2018-06-28", "2018-06-29", "2018-06-30", "2018-07-01", "2018-07-02", "2018-07-03", "2018-07-04", "2018-07-05", "2018-07-06", "2018-07-07", "2018-07-08", "2018-07-09", "2018-07-10", "2018-07-11", "2018-07-12", "2018-07-13", "2018-07-14", "2018-07-15", "2018-07-16", "2018-07-17", "2018-07-18", "2018-07-19", "2018-07-20", "2018-07-21", "2018-07-22", "2018-07-23", "2018-07-24", "2018-07-25", "2018-07-26", "2018-07-27", "2018-07-28", "2018-07-29", "2018-07-30", "2018-07-31", "2018-08-01", "2018-08-02", "2018-08-03", "2018-08-04", "2018-08-05", "2018-08-06", "2018-08-07", "2018-08-08", "2018-08-09", "2018-08-10", "2018-08-11", "2018-08-12", "2018-08-13", "2018-08-14", "2018-08-15", "2018-08-16", "2018-08-17", "2018-08-18", "2018-08-19", "2018-08-20", "2018-08-21", "2018-08-22", "2018-08-23", "2018-08-24", "2018-08-25", "2018-08-26", "2018-08-27", "2018-08-28", "2018-08-29", "2018-08-30", "2018-08-31", "2018-09-03", "2018-09-06", "2018-09-10", "2018-09-11", "2018-09-12", "2018-09-13", "2018-09-17", "2018-09-20", "2018-09-25", "2018-09-26", "2018-09-29", "2018-10-01", "2018-10-03", "2018-10-16", "2018-10-17"];
+        const data = [74, 204, 225, 258, 210, 216, 196, 293, 252, 277, 266, 243, 219, 235, 307, 302, 282, 241, 235, 184, 199, 314, 262, 244, 233, 229, 153, 156, 246, 258, 256, 232, 212, 193, 201, 271, 268, 248, 230, 216, 179, 172, 218, 224, 295, 283, 214, 204, 202, 259, 289, 266, 279, 235, 191, 237, 299, 298, 313, 277, 266, 214, 236, 264, 271, 259, 234, 204, 193, 218, 232, 227, 199, 290, 252, 180, 215, 303, 297, 286, 254, 221, 165, 190, 272, 245, 220, 194, 165, 168, 207, 282, 247, 257, 266, 189, 164, 185, 253, 201, 274, 255, 202, 146, 223, 280, 266, 280, 293, 197, 156, 200, 285, 271, 284, 254, 242, 169, 171, 240, 256, 296, 305, 265, 197, 211, 372, 331, 344, 279, 247, 207, 207, 364, 352, 357, 228, 236, 139, 161, 206, 199, 132, 114, 104, 99, 100, 143, 149, 140, 133, 184, 142, 192, 225, 200, 227, 223, 198, 172, 193, 294, 246, 259, 212, 186, 165, 152, 246, 231, 217, 234, 179, 151, 199, 241, 243, 215, 243, 174, 124, 161, 195, 216, 256, 195, 121, 91, 122, 148, 134, 127, 124, 168, 148, 152, 245, 221, 307, 253, 250, 187, 215, 307, 271, 268, 247, 189, 176, 188, 288, 322, 311, 302, 314, 245, 276, 372, 370, 316, 289, 256, 188, 197, 292, 316, 288, 320, 257, 198, 204, 256, 243, 187, 144, 99, 69, 73, 67, 44, 14, 4, 1, 4, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels, datasets: [{ label: 'Pedidos', data, borderColor: '#3b82f6', borderWidth: 2, pointRadius: 0, fill: true, backgroundColor: 'rgba(59,130,246,0.05)', tension: 0.3 }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, annotation: { annotations: {} } },
+                scales: { x: { grid: { display: false }, ticks: { maxTicksLimit: 12 } } }
+            }
+        });
+
+        const btnStrike = document.getElementById('btnStrike'), btnCup = document.getElementById('btnCup');
+        let showStrike = false, showCup = false;
+        function updateAnnotations() {
+            const annotations = {};
+            if (showStrike) {
+                annotations.strikeBox = { type: 'box', xMin: labels.indexOf('2018-05-21'), xMax: labels.indexOf('2018-05-30'), backgroundColor: 'rgba(239, 68, 68, 0.15)', borderColor: '#ef4444', borderWidth: 1, label: { display: true, content: 'GREVE', backgroundColor: '#ef4444', color: '#fff', font: { size: 10, weight: 'bold' } } };
+            }
+            if (showCup) {
+                annotations.cupBox = { type: 'box', xMin: labels.indexOf('2018-06-14'), xMax: labels.indexOf('2018-07-15'), backgroundColor: 'rgba(16, 185, 129, 0.15)', borderColor: '#10b981', borderWidth: 1, label: { display: true, content: 'COPA', backgroundColor: '#10b981', color: '#fff', font: { size: 10, weight: 'bold' } } };
+            }
+            chart.options.plugins.annotation.annotations = annotations;
+            chart.update();
+        }
+        btnStrike.onclick = () => { showStrike=!showStrike; btnStrike.classList.toggle('active-strike', showStrike); updateAnnotations(); };
+        btnCup.onclick = () => { showCup=!showCup; btnCup.classList.toggle('active-cup', showCup); updateAnnotations(); };
+    </script>
+</body>
+</html>

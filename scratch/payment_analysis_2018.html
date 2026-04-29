@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Meios de Pagamento - Olist 2018</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Inter', sans-serif; padding: 40px 0; }
+        .header-section { background: linear-gradient(135deg, #2ecc71, #27ae60); color: white; padding: 40px; border-radius: 24px; margin-bottom: 40px; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; margin-bottom: 30px; }
+        .chart-container { height: 450px; padding: 20px; }
+        .btn-back { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; text-decoration: none; border-radius: 12px; padding: 8px 16px; }
+        .btn-back:hover { background: rgba(255,255,255,0.3); color: white; }
+        .metric-card { background: white; padding: 20px; border-radius: 16px; text-align: center; border-bottom: 4px solid #2ecc71; }
+        .metric-value { font-size: 1.8rem; font-weight: bold; color: #2c3e50; }
+        .metric-label { color: #7f8c8d; font-size: 0.9rem; text-transform: uppercase; }
+        .insight-highlight { color: #27ae60; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class="header-section text-center position-relative shadow-lg">
+            <a href="dashboard_2018.html" class="btn-back position-absolute top-0 start-0 m-4">← Voltar</a>
+            <h1 class="fw-bold">💳 Meios de Pagamento: Março a Agosto</h1>
+            <p class="opacity-90">Análise de representatividade e impacto no faturamento</p>
+        </div>
+
+
+        <div class="row g-4">
+            <div class="col-md-8">
+                <div class="card p-4">
+                    <h5 class="fw-bold mb-4">📈 Evolução da Representatividade (%)</h5>
+                    <div class="chart-container"><canvas id="paymentShareChart"></canvas></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <h5 class="fw-bold mb-4">💡 Insights Estratégicos</h5>
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-success">1. Retração do Crédito Parcelado</h6>
+                        <p class="small text-muted">A queda de <span class="insight-highlight">2,5 pontos percentuais</span> no share de Cartão de Crédito correlaciona-se com a queda nas categorias de alto valor (Móveis e Tech). Sem o parcelamento, o ticket médio total do marketplace foi diluído.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-primary">2. Explosão do Débito</h6>
+                        <p class="small text-muted">O uso do cartão de débito saltou de <span class="insight-highlight">1% para 3,6%</span> do volume total. Esse comportamento indica uma migração para compras imediatas de menor valor, típicas das categorias de giro rápido (Beleza/Saúde) que dominaram o período pós-crise.</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-dark">3. Estabilidade do Boleto</h6>
+                        <p class="small text-muted">O Boleto manteve-se estável em ~18%. No entanto, em períodos de incerteza, o boleto pode ter taxas de conversão menores, o que também impacta indiretamente no faturamento final aprovado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-4 mt-4 border-0 shadow-sm" style="background: #eafaf1;">
+            <h6 class="fw-bold text-success mb-2">CONCLUSÃO DA ANÁLISE</h6>
+            <p class="text-muted small mb-0">A queda de faturamento entre Junho e Agosto não foi apenas uma questão de volume, mas de <strong>perfil financeiro</strong>. A redução no uso do Cartão de Crédito e o aumento do Débito mostram que o consumidor da Olist em 2018 priorizou <strong>pagamentos à vista e itens de menor valor</strong>, abandonando as compras parceladas de bens duráveis que sustentavam o faturamento nos meses de pico.</p>
+        </div>
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #f8fafc; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Referência temporal para os meses de 2018.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-success px-3 py-2 mb-2">olist_order_payments_dataset</span>
+                            <p class="text-muted small">Identificação do <code>payment_type</code> e volume de transações.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Representatividade</h5>
+                    <p class="text-muted small">Os dados foram normalizados para exibir a <strong>participação percentual (%)</strong> de cada meio de pagamento sobre o volume total mensal. O cálculo ignora o valor monetário e foca puramente na preferência transacional do consumidor.</p>
+                    <h5 class="fw-bold text-primary mb-3 mt-4">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">payment_type</span>
+                        <span class="badge bg-light text-dark border">order_id</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('paymentShareChart').getContext('2d');
+        const months = ["Mar\u00e7o", "Abril", "Maio", "Junho", "Julho", "Agosto"];
+        const pt_types = ["boleto", "credit_card", "debit_card", "voucher", "not_defined"];
+        const m_data = {"boleto": [18.329718004338392, 18.221718816366984, 18.06350114416476, 17.43817374762207, 19.140320822301824, 17.223650385604113], "credit_card": [76.92516268980476, 77.03525414129973, 78.30377574370709, 76.03043753963222, 73.7891294190936, 75.04914562225919], "debit_card": [1.0574837310195226, 1.3733540988248618, 0.7294050343249427, 2.8693722257450855, 3.768883351502881, 4.188719189475276], "voucher": [3.68763557483731, 3.3696729435084243, 2.9033180778032035, 3.662016487000634, 3.3016664071016977, 3.5082413428096175], "not_defined": [0, 0, 0, 0, 0, 0.03024345985180705]};
+
+        const colors = {
+            'credit_card': '#2ecc71',
+            'boleto': '#f1c40f',
+            'debit_card': '#3498db',
+            'voucher': '#e67e22',
+            'not_defined': '#95a5a6'
+        };
+
+        const datasets = pt_types.map(pt => ({
+            label: pt.replace('_', ' ').toUpperCase(),
+            data: m_data[pt],
+            borderColor: colors[pt] || '#000',
+            backgroundColor: (colors[pt] || '#000') + '22',
+            fill: true,
+            tension: 0.4
+        }));
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: { callbacks: { label: (ctx) => ctx.dataset.label + ': ' + ctx.raw.toFixed(2) + '%' } }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        max: 100,
+                        title: { display: true, text: 'Participação (%) no Volume de Pedidos' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
