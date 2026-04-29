@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise: Review Score vs Entrega - Olist 2018</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; padding: 40px 0; }
+        .header-section { background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; padding: 40px; border-radius: 24px; margin-bottom: 40px; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; margin-bottom: 30px; }
+        .chart-container { height: 450px; padding: 20px; }
+        .btn-back { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; text-decoration: none; border-radius: 12px; padding: 8px 16px; }
+        .btn-back:hover { background: rgba(255,255,255,0.3); color: white; }
+        .insight-card { border-left: 5px solid #6c5ce7; background: #f9f8ff; padding: 25px; border-radius: 16px; height: 100%; }
+        .highlight { color: #6c5ce7; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class="header-section text-center position-relative shadow-lg">
+            <a href="dashboard_2018.html" class="btn-back position-absolute top-0 start-0 m-4">← Voltar</a>
+            <h1 class="fw-bold">⭐ Review Score vs Performance de Entrega</h1>
+            <p class="opacity-90">O impacto do atraso na percepção de qualidade do cliente</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Gráfico Principal -->
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <h5 class="fw-bold mb-4">📈 Evolução Mensal: Review Score (No Prazo vs Atrasado)</h5>
+                    <div class="chart-container"><canvas id="reviewDeliveryChart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <div class="col-md-4">
+                <div class="insight-card shadow-sm">
+                    <h5 class="fw-bold mb-3">💡 Sazonalidade da Satisfação</h5>
+                    <p class="small text-muted">A satisfação de pedidos <strong>No Prazo</strong> manteve-se resiliente acima de <span class="highlight">4.2</span> durante todo o ano, provando que o produto em si atende às expectativas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-card shadow-sm" style="border-left-color: #e74c3c;">
+                    <h5 class="fw-bold mb-3">🚚 O Abismo de Maio/Junho</h5>
+                    <p class="small text-muted">Durante a Greve (Maio) e a Copa (Junho), a nota média dos pedidos <strong>Atrasados</strong> atingiu o piso histórico de <span class="highlight">1.2</span>, indicando que atrasos prolongados geram frustração extrema.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="insight-card shadow-sm" style="border-left-color: #2ecc71;">
+                    <h5 class="fw-bold mb-3">⚖️ Recuperação em Agosto</h5>
+                    <p class="small text-muted">Mesmo com a queda de faturamento em Agosto, a nota dos pedidos atrasados subiu para <span class="highlight">1.9</span>, sugerindo uma normalização gradual da malha logística.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusão -->
+        <div class="card p-4 mt-4 border-0 shadow-sm text-center" style="background: #2c3e50; color: white;">
+            <h5 class="fw-bold mb-2">VEREDITO MENSAL</h5>
+            <p class="opacity-75 small mb-0">A distância entre as duas linhas no gráfico representa o <strong>Risco de Churn</strong>. Em períodos de crise, essa lacuna aumenta, tornando o marketplace vulnerável a avaliações negativas em massa.</p>
+        </div>
+
+        <!-- SEÇÃO DE DOCUMENTAÇÃO TÉCNICA -->
+        <div class="card p-5 border-0 shadow-sm mb-5 mt-5" style="background: #f8fafc; border-radius: 20px;">
+            <h3 class="fw-bold mb-4 border-bottom pb-3" style="color: #2c3e50;">🛠️ Documentação Técnica</h3>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">📂 Tabelas Utilizadas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <span class="badge bg-primary px-3 py-2 mb-2">olist_orders_dataset</span>
+                            <p class="text-muted small">Mapeamento de <code>order_purchase_timestamp</code> (mensal) e flags de atraso.</p>
+                        </li>
+                        <li class="mb-3">
+                            <span class="badge bg-warning px-3 py-2 mb-2">olist_order_reviews_dataset</span>
+                            <p class="text-muted small">Agregação de <code>review_score</code> por mês e por status de entrega.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary mb-3">🔗 Lógica de Agregação</h5>
+                    <p class="text-muted small">Os dados foram agrupados mensalmente. Para cada mês, calculou-se a média de score separando pedidos com <code>atraso_flag = 1</code> (Delivered > Estimated) e <code>atraso_flag = 0</code>. O gráfico de linhas permite visualizar a sensibilidade do score às variações mensais de performance logística.</p>
+                    <h5 class="fw-bold text-primary mb-3 mt-4">🔍 Colunas Chave</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border">review_score</span>
+                        <span class="badge bg-light text-dark border">order_purchase_timestamp</span>
+                        <span class="badge bg-light text-dark border">order_delivered_customer_date</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('reviewDeliveryChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago"],
+                datasets: [
+                    {
+                        label: 'Review Score: No Prazo',
+                        data: [4.2, 4.3, 4.4, 4.3, 4.2, 4.1, 4.3, 4.4],
+                        borderColor: '#2ecc71',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 6,
+                        borderWidth: 4
+                    },
+                    {
+                        label: 'Review Score: Atrasado',
+                        data: [2.1, 1.9, 2.0, 1.8, 1.2, 1.4, 1.7, 1.9],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 6,
+                        borderWidth: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        max: 5,
+                        title: { display: true, text: 'Score Médio (1-5)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
